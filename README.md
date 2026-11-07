@@ -4,7 +4,7 @@
 
 [Read the preprint (PDF)](main.pdf) · [LaTeX source](main.tex) · [Reproducibility](REPRODUCIBILITY.md)
 
-**Zenodo DOI:** `10.5281/zenodo.24031055` (reserved for a draft deposit; not yet published).
+**Zenodo DOI:** [10.5281/zenodo.24031055](https://doi.org/10.5281/zenodo.24031055).
 
 ## About
 
@@ -37,7 +37,7 @@ The provided programs check specified matrix-unit identities, selected small ord
 
 ## Citation
 
-Y. T. Miah, *The L’vov–Kaplansky Conjecture for Standard Polynomials*, manuscript (2026). Reserved Zenodo DOI: `10.5281/zenodo.24031055`. Machine-readable citation data appear in [`CITATION.cff`](CITATION.cff).
+Y. T. Miah, *The L’vov–Kaplansky Conjecture for Standard Polynomials* (2026). DOI: [10.5281/zenodo.24031055](https://doi.org/10.5281/zenodo.24031055). Machine-readable citation data appear in [`CITATION.cff`](CITATION.cff).
 
 ## Licensing
 
