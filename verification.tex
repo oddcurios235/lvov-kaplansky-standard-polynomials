@@ -1,0 +1,96 @@
+\section{Exact checks for odd standard polynomials}\label{app:verification}
+The programs \path{code/verify_standard.py} and
+\path{code/graded.py} provide finite exact checks of the odd
+path, cycle, periodic and exceptional-order calculations.
+The first uses SymPy and evaluates alternating products by a
+full-matrix subset recurrence and by enumerating nonzero
+matrix-unit Euler trails. The second computes cyclic-homogeneous
+slice restrictions by a graded subset recurrence.
+
+For fixed inputs $A_1,\ldots,A_m$, let $D(S)$ denote the alternating
+sum over the variables indexed by $S\subseteq\{1,\ldots,m\}$.
+The full-matrix recurrence is
+\begin{equation}\label{eq:dp}
+ D(\varnothing)=I,\qquad
+ D(S)=\sum_{j\in S}(-1)^{|S|-\operatorname{pos}_S(j)}
+ D(S\setminus\{j\})A_j,
+\end{equation}
+where $\operatorname{pos}_S(j)$ is the position of $j$ in the
+increasing listing of $S$. For homogeneous cyclic inputs
+$A_j=\diag(w_j)P^{g_j}$, the graded calculation tracks the
+offset of each product and constructs the restriction matrix
+directly. The two calculations compare every column
+$L(E_{i,i+h\bmod n})$ for the specified exceptional cases;
+the generated JSON also includes integer determinants,
+finite trail counts, periodic pairs and metadata for sample Jordan
+constructions. The examples cover orders $3$ through $8$, with
+direct full-alternator evaluation checked for orders $3$ through $5$.
+
+With Python 3.10 or later and the packages in
+\path{requirements.txt}, run from the manuscript directory:
+\begin{samepage}
+\begin{verbatim}
+python -m pip install -r requirements.txt
+python code/verify_standard.py --output standard_rerun.json
+python code/verify_standard.py --extended \
+  --output standard_extended_rerun.json
+\end{verbatim}
+\end{samepage}
+Compare the parsed outputs with
+\path{certificates/standard_certificates.json} and
+\path{certificates/standard_certificates_extended.json}, respectively.
+The tests use assertions, so \texttt{python -O} must not be used.
+The corresponding finite ranges are described in
+\path{REPRODUCIBILITY.md}.
+
+\section{Even-standard integer certificates}\label{app:even-verification}
+The seven even-core certificates, indexed by their pairs $(r,N)$,
+are the following files:
+\begin{center}
+\small
+\begin{tabular}{@{}l@{}}
+\path{certificates/border_r4_N5.json}\\
+\path{certificates/border_r4_N6.json}\\
+\path{certificates/border_r4_N7.json}\\
+\path{certificates/border_r5_N6.json}\\
+\path{certificates/border_r5_N7.json}\\
+\path{certificates/border_r5_N8.json}\\
+\path{certificates/border_r5_N9.json}
+\end{tabular}
+\end{center}
+Each file contains integer matrices $B_1,\ldots,B_{2r-1}$,
+a column $u$, the nonzero integer determinant of
+$S=s_{2r-1}(B)$, and a specified $N^2\times N^2$ minor of
+the normal map $\Gam_{B,u}$ with its integer determinant.
+The nonzero determinant of $S$ and minor of $\Gam$ establish
+admissibility \eqref{eq:core-admissible} for that core size.
+
+The constructor \path{code/verify_border_even.py} uses an
+alternating-product subset recurrence and replaced-input
+columns, with direct word enumeration for smaller cases.
+The saved-input checker \path{code/verify_saved_border.py}
+uses a different first-letter recurrence to rebuild every
+normal-map column; it checks $\det S$, the bordered rank-one
+square-zero value and the recorded minor modulo $101$ and
+$103$. A nonzero residue of the integer minor establishes
+its nonvanishing over characteristic-zero fields.
+The seed checker \path{code/verify_minimal_even.py} tests the
+signed matrix-unit formulas and full differential in specified
+finite sizes.
+
+For example, run:
+\begin{verbatim}
+python code/verify_saved_border.py \
+  --input certificates/border_r4_N5.json \
+  --output checked_border_r4_N5.json
+python code/verify_minimal_even.py \
+  --max-n 8 --rank-max-n 6 \
+  --output minimal_even_rerun.json
+\end{verbatim}
+The first command applies likewise to the other six certificate
+files; \path{REPRODUCIBILITY.md} gives the full list and
+constructor command. These integer checks establish the listed
+finite admissible cores. Their extension to infinitely many
+matrix orders is the symbolic additive transfer
+of Theorem~\ref{thm:core-add}, while the general even-degree
+argument uses the cited generic-nullity theorems.

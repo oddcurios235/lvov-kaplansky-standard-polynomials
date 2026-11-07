@@ -1,0 +1,2241 @@
+{
+  "independent_full_matrix_comparisons": 25,
+  "local_path_checks": 636,
+  "cycle_coefficient_checks": 3190,
+  "minimal_size_Jordan_examples": [
+    {
+      "blocks": [
+        [
+          0,
+          3
+        ]
+      ],
+      "ordering": [
+        0,
+        1,
+        2
+      ],
+      "avoidance_parameter": 0,
+      "direct_full_evaluation": true
+    },
+    {
+      "blocks": [
+        [
+          1,
+          3
+        ]
+      ],
+      "ordering": [
+        0,
+        1,
+        2
+      ],
+      "avoidance_parameter": 0,
+      "direct_full_evaluation": true
+    },
+    {
+      "blocks": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "ordering": [
+        0,
+        1,
+        2
+      ],
+      "avoidance_parameter": 0,
+      "direct_full_evaluation": true
+    },
+    {
+      "blocks": [
+        [
+          1,
+          2
+        ],
+        [
+          -2,
+          1
+        ]
+      ],
+      "ordering": [
+        0,
+        1,
+        2
+      ],
+      "avoidance_parameter": 0,
+      "direct_full_evaluation": true
+    },
+    {
+      "blocks": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "ordering": [
+        0,
+        1,
+        2
+      ],
+      "avoidance_parameter": 0,
+      "direct_full_evaluation": true
+    },
+    {
+      "blocks": [
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "ordering": [
+        0,
+        1,
+        2
+      ],
+      "avoidance_parameter": 0,
+      "direct_full_evaluation": true
+    },
+    {
+      "blocks": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "ordering": [
+        0,
+        1,
+        2
+      ],
+      "avoidance_parameter": 0,
+      "direct_full_evaluation": true
+    },
+    {
+      "blocks": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "ordering": [
+        0,
+        1,
+        2
+      ],
+      "avoidance_parameter": 0,
+      "direct_full_evaluation": true
+    },
+    {
+      "blocks": [
+        [
+          0,
+          4
+        ]
+      ],
+      "ordering": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "avoidance_parameter": 0,
+      "direct_full_evaluation": true
+    },
+    {
+      "blocks": [
+        [
+          1,
+          4
+        ]
+      ],
+      "ordering": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "avoidance_parameter": 0,
+      "direct_full_evaluation": true
+    },
+    {
+      "blocks": [
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "ordering": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "avoidance_parameter": 0,
+      "direct_full_evaluation": true
+    },
+    {
+      "blocks": [
+        [
+          1,
+          3
+        ],
+        [
+          -3,
+          1
+        ]
+      ],
+      "ordering": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "avoidance_parameter": 0,
+      "direct_full_evaluation": true
+    },
+    {
+      "blocks": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "ordering": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "avoidance_parameter": 0,
+      "direct_full_evaluation": true
+    },
+    {
+      "blocks": [
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "ordering": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "avoidance_parameter": 0,
+      "direct_full_evaluation": true
+    },
+    {
+      "blocks": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "ordering": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "avoidance_parameter": 0,
+      "direct_full_evaluation": true
+    },
+    {
+      "blocks": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "ordering": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "avoidance_parameter": 0,
+      "direct_full_evaluation": true
+    },
+    {
+      "blocks": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          -1,
+          1
+        ]
+      ],
+      "ordering": [
+        0,
+        2,
+        1,
+        3
+      ],
+      "avoidance_parameter": 0,
+      "direct_full_evaluation": true
+    },
+    {
+      "blocks": [
+        [
+          0,
+          5
+        ]
+      ],
+      "ordering": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "avoidance_parameter": 0,
+      "direct_full_evaluation": true
+    },
+    {
+      "blocks": [
+        [
+          1,
+          5
+        ]
+      ],
+      "ordering": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "avoidance_parameter": 0,
+      "direct_full_evaluation": true
+    },
+    {
+      "blocks": [
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "ordering": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "avoidance_parameter": 1,
+      "direct_full_evaluation": true
+    },
+    {
+      "blocks": [
+        [
+          1,
+          4
+        ],
+        [
+          -4,
+          1
+        ]
+      ],
+      "ordering": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "avoidance_parameter": 0,
+      "direct_full_evaluation": true
+    },
+    {
+      "blocks": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "ordering": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "avoidance_parameter": 0,
+      "direct_full_evaluation": true
+    },
+    {
+      "blocks": [
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "ordering": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "avoidance_parameter": 0,
+      "direct_full_evaluation": true
+    },
+    {
+      "blocks": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "ordering": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "avoidance_parameter": 0,
+      "direct_full_evaluation": true
+    },
+    {
+      "blocks": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "ordering": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "avoidance_parameter": 0,
+      "direct_full_evaluation": true
+    },
+    {
+      "blocks": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          -1,
+          1
+        ]
+      ],
+      "ordering": [
+        0,
+        2,
+        3,
+        1,
+        4
+      ],
+      "avoidance_parameter": 0,
+      "direct_full_evaluation": true
+    },
+    {
+      "blocks": [
+        [
+          0,
+          6
+        ]
+      ],
+      "ordering": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "avoidance_parameter": 0,
+      "direct_full_evaluation": false
+    },
+    {
+      "blocks": [
+        [
+          1,
+          6
+        ]
+      ],
+      "ordering": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "avoidance_parameter": 0,
+      "direct_full_evaluation": false
+    },
+    {
+      "blocks": [
+        [
+          1,
+          5
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "ordering": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "avoidance_parameter": 0,
+      "direct_full_evaluation": false
+    },
+    {
+      "blocks": [
+        [
+          1,
+          5
+        ],
+        [
+          -5,
+          1
+        ]
+      ],
+      "ordering": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "avoidance_parameter": 0,
+      "direct_full_evaluation": false
+    },
+    {
+      "blocks": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "ordering": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "avoidance_parameter": 0,
+      "direct_full_evaluation": false
+    },
+    {
+      "blocks": [
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "ordering": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "avoidance_parameter": 0,
+      "direct_full_evaluation": false
+    },
+    {
+      "blocks": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "ordering": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "avoidance_parameter": 0,
+      "direct_full_evaluation": false
+    },
+    {
+      "blocks": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "ordering": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "avoidance_parameter": 0,
+      "direct_full_evaluation": false
+    },
+    {
+      "blocks": [
+        [
+          0,
+          4
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          -1,
+          1
+        ]
+      ],
+      "ordering": [
+        0,
+        2,
+        4,
+        1,
+        3,
+        5
+      ],
+      "avoidance_parameter": 0,
+      "direct_full_evaluation": false
+    },
+    {
+      "blocks": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          -1,
+          2
+        ]
+      ],
+      "ordering": [
+        0,
+        2,
+        1,
+        3,
+        4,
+        5
+      ],
+      "avoidance_parameter": 0,
+      "direct_full_evaluation": false
+    },
+    {
+      "blocks": [
+        [
+          0,
+          7
+        ]
+      ],
+      "ordering": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "avoidance_parameter": 0,
+      "direct_full_evaluation": false
+    },
+    {
+      "blocks": [
+        [
+          1,
+          7
+        ]
+      ],
+      "ordering": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "avoidance_parameter": 0,
+      "direct_full_evaluation": false
+    },
+    {
+      "blocks": [
+        [
+          1,
+          6
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "ordering": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "avoidance_parameter": 0,
+      "direct_full_evaluation": false
+    },
+    {
+      "blocks": [
+        [
+          1,
+          6
+        ],
+        [
+          -6,
+          1
+        ]
+      ],
+      "ordering": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "avoidance_parameter": 0,
+      "direct_full_evaluation": false
+    },
+    {
+      "blocks": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "ordering": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "avoidance_parameter": 0,
+      "direct_full_evaluation": false
+    },
+    {
+      "blocks": [
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "ordering": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "avoidance_parameter": 0,
+      "direct_full_evaluation": false
+    },
+    {
+      "blocks": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "ordering": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "avoidance_parameter": 0,
+      "direct_full_evaluation": false
+    },
+    {
+      "blocks": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "ordering": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "avoidance_parameter": 0,
+      "direct_full_evaluation": false
+    },
+    {
+      "blocks": [
+        [
+          0,
+          5
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          -1,
+          1
+        ]
+      ],
+      "ordering": [
+        0,
+        2,
+        4,
+        5,
+        1,
+        3,
+        6
+      ],
+      "avoidance_parameter": 0,
+      "direct_full_evaluation": false
+    },
+    {
+      "blocks": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          -1,
+          2
+        ]
+      ],
+      "ordering": [
+        0,
+        2,
+        3,
+        1,
+        4,
+        5,
+        6
+      ],
+      "avoidance_parameter": 0,
+      "direct_full_evaluation": false
+    },
+    {
+      "blocks": [
+        [
+          0,
+          8
+        ]
+      ],
+      "ordering": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "avoidance_parameter": 0,
+      "direct_full_evaluation": false
+    },
+    {
+      "blocks": [
+        [
+          1,
+          8
+        ]
+      ],
+      "ordering": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "avoidance_parameter": 0,
+      "direct_full_evaluation": false
+    },
+    {
+      "blocks": [
+        [
+          1,
+          7
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "ordering": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "avoidance_parameter": 0,
+      "direct_full_evaluation": false
+    },
+    {
+      "blocks": [
+        [
+          1,
+          7
+        ],
+        [
+          -7,
+          1
+        ]
+      ],
+      "ordering": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "avoidance_parameter": 0,
+      "direct_full_evaluation": false
+    },
+    {
+      "blocks": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "ordering": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "avoidance_parameter": 0,
+      "direct_full_evaluation": false
+    },
+    {
+      "blocks": [
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "ordering": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "avoidance_parameter": 0,
+      "direct_full_evaluation": false
+    },
+    {
+      "blocks": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "ordering": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "avoidance_parameter": 0,
+      "direct_full_evaluation": false
+    },
+    {
+      "blocks": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "ordering": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "avoidance_parameter": 0,
+      "direct_full_evaluation": false
+    },
+    {
+      "blocks": [
+        [
+          0,
+          6
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          -1,
+          1
+        ]
+      ],
+      "ordering": [
+        0,
+        2,
+        4,
+        6,
+        1,
+        3,
+        5,
+        7
+      ],
+      "avoidance_parameter": 0,
+      "direct_full_evaluation": false
+    },
+    {
+      "blocks": [
+        [
+          0,
+          4
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          -1,
+          2
+        ]
+      ],
+      "ordering": [
+        0,
+        2,
+        4,
+        1,
+        3,
+        5,
+        6,
+        7
+      ],
+      "avoidance_parameter": 0,
+      "direct_full_evaluation": false
+    }
+  ],
+  "periodic_blocks": [
+    {
+      "k": 3,
+      "t": 1,
+      "grade_2_det": -192,
+      "cross_parity_block": null
+    },
+    {
+      "k": 3,
+      "t": 2,
+      "grade_2_det": -13824,
+      "cross_parity_block": null
+    },
+    {
+      "k": 3,
+      "t": 3,
+      "grade_2_det": 231200,
+      "cross_parity_block": null
+    },
+    {
+      "k": 4,
+      "t": 1,
+      "grade_2_det": -5184,
+      "cross_parity_block": [
+        [
+          -2
+        ]
+      ]
+    },
+    {
+      "k": 4,
+      "t": 2,
+      "grade_2_det": 49152,
+      "cross_parity_block": [
+        [
+          -4
+        ]
+      ]
+    },
+    {
+      "k": 4,
+      "t": 3,
+      "grade_2_det": 3097600,
+      "cross_parity_block": [
+        [
+          -5,
+          1
+        ],
+        [
+          -1,
+          5
+        ]
+      ]
+    },
+    {
+      "k": 4,
+      "t": 4,
+      "grade_2_det": -137168640,
+      "cross_parity_block": [
+        [
+          -5,
+          1
+        ],
+        [
+          -1,
+          5
+        ]
+      ]
+    },
+    {
+      "k": 5,
+      "t": 1,
+      "grade_2_det": 13824,
+      "cross_parity_block": [
+        [
+          -2
+        ]
+      ]
+    },
+    {
+      "k": 5,
+      "t": 2,
+      "grade_2_det": 2457600,
+      "cross_parity_block": [
+        [
+          -4
+        ]
+      ]
+    },
+    {
+      "k": 5,
+      "t": 3,
+      "grade_2_det": -13381632,
+      "cross_parity_block": [
+        [
+          -5,
+          1
+        ],
+        [
+          1,
+          -5
+        ]
+      ]
+    },
+    {
+      "k": 5,
+      "t": 4,
+      "grade_2_det": -1027604480,
+      "cross_parity_block": [
+        [
+          -5,
+          1
+        ],
+        [
+          1,
+          -5
+        ]
+      ]
+    },
+    {
+      "k": 5,
+      "t": 5,
+      "grade_2_det": 95495832576,
+      "cross_parity_block": [
+        [
+          -5,
+          1
+        ],
+        [
+          1,
+          -5
+        ]
+      ]
+    },
+    {
+      "k": 6,
+      "t": 1,
+      "grade_2_det": 331776,
+      "cross_parity_block": [
+        [
+          -2
+        ]
+      ]
+    },
+    {
+      "k": 6,
+      "t": 2,
+      "grade_2_det": -7372800,
+      "cross_parity_block": [
+        [
+          -4
+        ]
+      ]
+    },
+    {
+      "k": 6,
+      "t": 3,
+      "grade_2_det": -874266624,
+      "cross_parity_block": [
+        [
+          -5,
+          1
+        ],
+        [
+          -1,
+          5
+        ]
+      ]
+    },
+    {
+      "k": 6,
+      "t": 4,
+      "grade_2_det": 5368709120,
+      "cross_parity_block": [
+        [
+          -5,
+          1
+        ],
+        [
+          -1,
+          5
+        ]
+      ]
+    },
+    {
+      "k": 6,
+      "t": 5,
+      "grade_2_det": 492197658624,
+      "cross_parity_block": [
+        [
+          -5,
+          1
+        ],
+        [
+          -1,
+          5
+        ]
+      ]
+    },
+    {
+      "k": 6,
+      "t": 6,
+      "grade_2_det": -82997981552640,
+      "cross_parity_block": [
+        [
+          -5,
+          1
+        ],
+        [
+          -1,
+          5
+        ]
+      ]
+    },
+    {
+      "k": 7,
+      "t": 1,
+      "grade_2_det": -884736,
+      "cross_parity_block": [
+        [
+          -2
+        ]
+      ]
+    },
+    {
+      "k": 7,
+      "t": 2,
+      "grade_2_det": -353894400,
+      "cross_parity_block": [
+        [
+          -4
+        ]
+      ]
+    },
+    {
+      "k": 7,
+      "t": 3,
+      "grade_2_det": 3497066496,
+      "cross_parity_block": [
+        [
+          -5,
+          1
+        ],
+        [
+          1,
+          -5
+        ]
+      ]
+    },
+    {
+      "k": 7,
+      "t": 4,
+      "grade_2_det": 434865438720,
+      "cross_parity_block": [
+        [
+          -5,
+          1
+        ],
+        [
+          1,
+          -5
+        ]
+      ]
+    },
+    {
+      "k": 7,
+      "t": 5,
+      "grade_2_det": -3038257152000,
+      "cross_parity_block": [
+        [
+          -5,
+          1
+        ],
+        [
+          1,
+          -5
+        ]
+      ]
+    },
+    {
+      "k": 7,
+      "t": 6,
+      "grade_2_det": -325108616921088,
+      "cross_parity_block": [
+        [
+          -5,
+          1
+        ],
+        [
+          1,
+          -5
+        ]
+      ]
+    },
+    {
+      "k": 7,
+      "t": 7,
+      "grade_2_det": 90171378529689600,
+      "cross_parity_block": [
+        [
+          -5,
+          1
+        ],
+        [
+          1,
+          -5
+        ]
+      ]
+    }
+  ],
+  "large_path_cores": [
+    {
+      "r": 2,
+      "n": 2,
+      "diagonal_det": -3,
+      "endpoint_diagonal": [
+        1,
+        -1
+      ]
+    },
+    {
+      "r": 2,
+      "n": 5,
+      "diagonal_det": 168,
+      "endpoint_diagonal": [
+        1,
+        -2,
+        2,
+        -2,
+        1
+      ]
+    },
+    {
+      "r": 3,
+      "n": 3,
+      "diagonal_det": -10,
+      "endpoint_diagonal": [
+        1,
+        -2,
+        1
+      ]
+    },
+    {
+      "r": 3,
+      "n": 7,
+      "diagonal_det": -63000,
+      "endpoint_diagonal": [
+        1,
+        -3,
+        4,
+        -4,
+        4,
+        -3,
+        1
+      ]
+    },
+    {
+      "r": 4,
+      "n": 4,
+      "diagonal_det": 7168,
+      "endpoint_diagonal": [
+        4,
+        -8,
+        8,
+        -4
+      ]
+    },
+    {
+      "r": 4,
+      "n": 8,
+      "diagonal_det": 74547200000,
+      "endpoint_diagonal": [
+        4,
+        -12,
+        20,
+        -24,
+        24,
+        -20,
+        12,
+        -4
+      ]
+    },
+    {
+      "r": 5,
+      "n": 5,
+      "diagonal_det": 4458050224128,
+      "endpoint_diagonal": [
+        144,
+        -288,
+        288,
+        -288,
+        144
+      ]
+    },
+    {
+      "r": 5,
+      "n": 9,
+      "diagonal_det": 409316177793645240763023360,
+      "endpoint_diagonal": [
+        144,
+        -432,
+        720,
+        -1008,
+        1152,
+        -1008,
+        720,
+        -432,
+        144
+      ]
+    }
+  ],
+  "exceptional_certificates": [
+    {
+      "label": "s5_M5",
+      "weights": [
+        [
+          1,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          -1
+        ],
+        [
+          0,
+          1,
+          0,
+          -1,
+          0
+        ]
+      ],
+      "grades": [
+        1,
+        1,
+        -1,
+        -1
+      ],
+      "restrictions": {
+        "0": [
+          [
+            2,
+            -2,
+            1,
+            0,
+            0
+          ],
+          [
+            2,
+            -8,
+            4,
+            -1,
+            0
+          ],
+          [
+            1,
+            -4,
+            10,
+            -4,
+            1
+          ],
+          [
+            0,
+            -1,
+            4,
+            -8,
+            2
+          ],
+          [
+            0,
+            0,
+            1,
+            -2,
+            2
+          ]
+        ],
+        "2": [
+          [
+            4,
+            -1,
+            1,
+            0,
+            0
+          ],
+          [
+            -1,
+            -4,
+            -1,
+            0,
+            0
+          ],
+          [
+            1,
+            -1,
+            4,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            -3,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            -3
+          ]
+        ]
+      },
+      "determinants": [
+        900,
+        -594
+      ]
+    },
+    {
+      "label": "s7_M6",
+      "weights": [
+        [
+          1,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          0
+        ],
+        [
+          1,
+          4,
+          9,
+          16,
+          25,
+          0
+        ],
+        [
+          0,
+          1,
+          4,
+          9,
+          -16,
+          -25
+        ],
+        [
+          0,
+          1,
+          2,
+          3,
+          -4,
+          -5
+        ],
+        [
+          0,
+          1,
+          1,
+          1,
+          -1,
+          -1
+        ]
+      ],
+      "grades": [
+        1,
+        1,
+        1,
+        -1,
+        -1,
+        -1
+      ],
+      "restrictions": {
+        "0": [
+          [
+            8,
+            -8,
+            8,
+            -4,
+            0,
+            0
+          ],
+          [
+            8,
+            -32,
+            24,
+            -16,
+            4,
+            0
+          ],
+          [
+            8,
+            -24,
+            56,
+            -32,
+            16,
+            -4
+          ],
+          [
+            4,
+            -16,
+            32,
+            -56,
+            24,
+            -8
+          ],
+          [
+            0,
+            -4,
+            16,
+            -24,
+            32,
+            -8
+          ],
+          [
+            0,
+            0,
+            4,
+            -8,
+            8,
+            -8
+          ]
+        ],
+        "2": [
+          [
+            -16,
+            -24,
+            24,
+            -4,
+            0,
+            0
+          ],
+          [
+            24,
+            -132,
+            144,
+            -24,
+            0,
+            0
+          ],
+          [
+            -24,
+            144,
+            60,
+            24,
+            0,
+            0
+          ],
+          [
+            4,
+            -24,
+            24,
+            16,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            -416,
+            -36
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            -36,
+            -376
+          ]
+        ],
+        "3": [
+          [
+            164,
+            44,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            44,
+            432,
+            100,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            100,
+            52,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            164,
+            -44,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            -44,
+            432,
+            -100
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            -100,
+            52
+          ]
+        ]
+      },
+      "determinants": [
+        -31911936,
+        1838804889600,
+        3776896843776
+      ]
+    }
+  ],
+  "s5_M3_core_and_endpoint": "verified symbolically"
+}

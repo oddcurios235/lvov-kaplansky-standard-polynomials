@@ -1,0 +1,1053 @@
+\section{Linear slices and balanced endpoint transfer}\label{sec:slices}
+Fix $A_1,\ldots,A_{m-1}\in\Mat_n(K)$ and set
+\begin{equation}\label{eq:slice}
+ L_A(X)=f(A_1,\ldots,A_{m-1},X).
+\end{equation}
+For multilinear $f$, the map $L_A$ is linear. Thus any linear
+combination of outputs obtained by varying $X$ \emph{with the same fixed
+tuple $A$} is again one value of $f$. No additive closure of the
+unrestricted image is assumed. Simultaneous conjugation of all inputs
+conjugates the output of $s_m$.
+
+\begin{lemma}[Jordan-path criterion]\label{lem:jordanpath}
+Suppose a slice image contains all diagonal matrices and the matrix
+units
+\[E_{i_1i_2},E_{i_2i_3},\ldots,E_{i_{n-1}i_n}\]
+for some permutation $(i_1,\ldots,i_n)$ of the indices. Then
+$\im f(\Mat_n(K))=\Mat_n(K)$, provided $f$ is equivariant under
+simultaneous conjugation.
+\end{lemma}
+\begin{proof}
+Within this one slice we can prescribe each diagonal entry and the
+superdiagonal entries along the indicated path independently. A
+Jordan matrix, including a direct sum of several blocks, has precisely
+this form after permuting the coordinates, with its link entries
+chosen to be $1$ or $0$. Every matrix over $K$ is similar to such a
+matrix. Conjugating the entire input tuple concludes the proof.
+\end{proof}
+
+For later use let
+\begin{equation}\label{eq:V2}
+ V_h=\Span\{E_{i,i+h\bmod n}:0\le i<n\}.
+\end{equation}
+If $n$ is odd, the step-two edges in $V_2$ contain a Hamiltonian
+cycle. If $n$ is even, the two parity cycles are linked by $E_{03}$;
+an explicit Hamiltonian path is
+\begin{equation}\label{eq:evenpath}
+ 2\longrightarrow4\longrightarrow\cdots\longrightarrow n-2
+ \longrightarrow0\longrightarrow3\longrightarrow5
+ \longrightarrow\cdots\longrightarrow n-1\longrightarrow1.
+\end{equation}
+
+Let $f$ be homogeneous multilinear of degree $m$ and let its final
+variable be free. In the signed word expansion, denote by $P(A)$
+the total fixed-input product coefficient when that variable is at
+the \emph{last} position; let $Q(A)$ be its counterpart in the
+\emph{first} position. Both depend polynomially on $A$.
+
+\begin{theorem}[Balanced endpoint transfer]\label{thm:transfer}
+Let $n=p+q$ with $|p-q|\le1$. Suppose there are fixed
+$(m-1)$-tuples $A\in\Mat_p(K)^{m-1}$ and
+$B\in\Mat_q(K)^{m-1}$ such that both slice images contain every
+diagonal matrix in their respective blocks and $P(A)$ and $Q(A)$
+are invertible. Then $\im f(\Mat_n(K))=\Mat_n(K)$, assuming
+simultaneous-conjugacy equivariance.
+\end{theorem}
+\begin{proof}
+Take the block-diagonal fixed tuple
+\[
+ C_j(t)=\begin{pmatrix}A_j&0\\0&tB_j\end{pmatrix}
+ \qquad(1\le j<m).
+\]
+Writing the free input in four rectangular blocks yields four
+independent block-preserving linear maps. On the two diagonal blocks
+they are $L_A$ and $t^{m-1}L_B$. On a top-right input $X$,
+setting $t=0$ kills terms in which a $B$ factor occurs on the
+right of $X$, giving $X\mapsto P(A)X$. On a bottom-left input, the
+limit is $X\mapsto XQ(A)$. These last maps are invertible for $t=0$.
+The corresponding determinants are nonzero polynomials in $t$.
+Choose a single $t\in K^\times$ avoiding their finitely many zero
+sets. This choice is independent of the eventual target matrix.
+
+At this fixed nonzero $t$, the slice covers all four mixed-block
+entries and all diagonal entries in either square block. Since
+$|p-q|\le1$, the bipartite graph of entries between the two blocks
+has a Hamiltonian path alternating between the blocks. Therefore
+Lemma~\ref{lem:jordanpath} applies.
+\end{proof}
+
+For $f=s_{2k+1}$ the two endpoint coefficients are
+\begin{equation}\label{eq:endpoints}
+ P(A)=Q(A)=s_{2k}(A_1,\ldots,A_{2k}).
+\end{equation}
+Indeed moving the free letter across the other $2k$ letters changes
+no sign. The balanced hypothesis is essential: no Hamiltonian path
+through a complete bipartite graph exists if its two parts differ in
+size by more than one.
+
+\section{Signed trails on a bidirected path}\label{sec:path}
+Fix $k\ge1$, write $r=k+1$, and consider the ordered list
+\begin{equation}\label{eq:pathlist}
+ \mathcal A_k=(E_{01},E_{12},\ldots,E_{k-1,k},
+ E_{k,k-1},E_{k-1,k-2},\ldots,E_{10}).
+\end{equation}
+Set
+\[
+\begin{aligned}
+ c&=(1,\underbrace{2,\ldots,2}_{r-2},1)^t,\\
+ H&=\diag(c)+cc^t,\\
+ \mathcal E_r&=\diag(1,-1,1,\ldots,(-1)^{r-1}).
+\end{aligned}
+\]
+For $r=2$ the middle list is empty. Every nonzero product of
+matrix units is an oriented Euler trail through their directed
+edges. This simple observation gives the exact slice coefficients.
+
+\begin{lemma}[Endpoint and loops]\label{lem:pathloop}
+For the tuple \eqref{eq:pathlist},
+\begin{align}
+ s_{2k}(\mathcal A_k)&=\diag((-1)^ic_i)_{0\le i<r},\label{eq:pathendpoint}\\
+ s_{2k+1}(\mathcal A_k,\diag(x))&=\diag(H\mathcal E_r x).
+ \label{eq:pathdiag}
+\end{align}
+Furthermore,
+\begin{equation}\label{eq:pathdet}
+ \det(H\mathcal E_r)=(-1)^{r(r-1)/2}2^{r-2}(2r-1)\ne0.
+\end{equation}
+\end{lemma}
+\begin{proof}
+The forward and reverse directed edges form a bidirected path. Every
+closed Euler ordering is a cyclic rotation of the tour traversing
+that path forward and returning. Vertex $i$ occurs as a starting
+vertex $c_i$ times, and the resulting permutations have sign
+$(-1)^i$. This proves \eqref{eq:pathendpoint}.
+
+Insert a diagonal loop at vertex $j$. For a tour beginning at $i$,
+there are $c_j+\delta_{ij}$ loop slots. Incorporating the loop into
+the fixed ordering gives sign $(-1)^j$ for the added-loop
+coefficient, so its contribution to output coordinate $i$ is
+$c_i(c_j+\delta_{ij})(-1)^j$. This is exactly
+$H\mathcal E_r$. Finally the determinant lemma yields
+\[
+ \det H=\left(\prod_{i=0}^{r-1}c_i\right)
+ \left(1+c^t\diag(c)^{-1}c\right)
+ =2^{r-2}(2r-1).
+\]
+Multiply by $\det\mathcal E_r=(-1)^{r(r-1)/2}$.
+\end{proof}
+
+\Needspace{18\baselineskip}
+\begin{lemma}[Free chord on a bidirected path]\label{lem:pathchord}
+Embed \eqref{eq:pathlist} on an interval of indices
+$a,a+1,\ldots,a+k$, with $c_j$ as above. For $p\ne q$, the
+image of the free matrix unit $E_{pq}$ is a multiple of $E_{pq}$.
+The coefficient, before any external window weight, is
+\begin{equation}\label{eq:pathchordtable}
+\begin{array}{@{}ll@{}}
+\text{position of $p,q$}&\text{coefficient}\\\midrule
+p,q\text{ inside, same parity}&(-1)^{p-a}c_{p-a}c_{q-a}\\
+p,q\text{ inside, opposite parity}&0\\
+p\text{ inside},\ q\text{ outside}&(-1)^{p-a}c_{p-a}\\
+q\text{ inside},\ p\text{ outside}&(-1)^{q-a}c_{q-a}\\
+p,q\text{ outside}&0.
+\end{array}
+\end{equation}
+\end{lemma}
+\begin{proof}
+The directed degree imbalance of the fixed bidirected path is zero.
+Adding $p\to q$ forces every connected Euler trail to start at $p$
+and end at $q$, so the output unit is $E_{pq}$. If the free edge
+joins a path vertex to an external vertex, it must be first or
+last; \eqref{eq:pathendpoint} gives the two one-sided coefficients.
+If both endpoints lie outside, the selected edges are disconnected.
+
+For two inside vertices, assume first $p<q$ and put $d=q-p$.
+The tails outside $[p,q]$ must be traversed outward and back. Each
+nonempty tail admits the independent attachment multiplicity
+$c_{p-a}$ or $c_{q-a}$. After stripping these tails, an Euler trail
+is specified by a turning vertex $j\in[p,q]$: go from $p$ to $j$
+and back, take the chord $p\to q$, then go from $q$ to $j$ and
+back. Moving $j$ one edge changes the permutation sign by $-1$.
+The initial sign, by inversion counting in the displayed order of
+\eqref{eq:pathlist}, is $(-1)^{q-a}$. Summing gives
+\[
+ (-1)^{q-a}c_{p-a}c_{q-a}
+ \sum_{h=0}^{d}(-1)^h.
+\]
+The sum vanishes for odd $d$ and equals $1$ for even $d$, in
+which case $p$ and $q$ have the same parity. For $p>q$, reversing
+both the directed path and the fixed ordering contributes the
+same sign $(-1)^k$ twice, giving the identical formula.
+\end{proof}
+
+\section{Positive path cores and large matrix sizes}\label{sec:large}
+We next build one slice with invertible diagonal restriction and
+invertible even-standard endpoint on every $\Mat_q(K)$ with $q\ge r$.
+For $k=r-1$, define
+\begin{equation}\label{eq:Vandermonde}
+\begin{split}
+ F_j&=\sum_{e=0}^{q-2}(e+1)^{j-1}E_{e,e+1},\\
+ R_j&=\sum_{e=0}^{q-2}z_e(e+1)^{j-1}E_{e+1,e},
+ \qquad z_e=(-1)^{\lfloor e/k\rfloor},
+\end{split}
+\end{equation}
+for $1\le j\le k$, and order the fixed inputs as
+$F_1,\ldots,F_k,R_k,\ldots,R_1$. Put
+\[
+ v_k=\prod_{j=1}^{k-1}j!,\qquad
+ \iota_a:K^r\longrightarrow K^q,
+ \quad(x_0,\ldots,x_{r-1})\longmapsto
+ \sum_{i=0}^{r-1}x_i e_{a+i}.
+\]
+
+\begin{proposition}\label{prop:positive}
+For every $q\ge r$, the diagonal restriction of the final-variable
+slice associated with \eqref{eq:Vandermonde} is
+\begin{equation}\label{eq:Gram}
+ L_{\rm diag}=G\mathcal E_q,
+ \qquad G=v_k^2\sum_{a=0}^{q-r}\iota_aH\iota_a^t.
+\end{equation}
+Its fixed-input even standard polynomial is
+\begin{equation}\label{eq:largeendpoint}
+ s_{2k}(F_1,\ldots,F_k,R_k,\ldots,R_1)
+ =v_k^2\diag\left((-1)^i
+ \sum_{\substack{0\le a\le q-r\\a\le i\le a+k}}
+ c_{i-a}\right)_{0\le i<q}.
+\end{equation}
+Both matrices are invertible in characteristic zero.
+\end{proposition}
+\begin{proof}
+Expand the fixed inputs into path units. Alternation among the
+$F_j$ requires $k$ distinct forward edges, and alternation among
+the $R_j$ requires $k$ distinct backward edges. A diagonal output
+has zero net flow through every edge cut, so the forward and reverse
+edge sets coincide. With only one extra diagonal loop, a disconnected
+set of edges cannot support one Euler trail. Consequently the $k$
+selected edges form a consecutive interval
+$a,a+1,\ldots,a+k-1$.
+
+On a fixed window, the coefficients from the forward and reverse
+choices are two Vandermonde determinants, both of absolute algebraic
+value $v_k$, before reverse signs. Their product is $v_k^2$.
+Furthermore
+\[
+ \prod_{e=a}^{a+k-1}z_e=(-1)^a:
+\]
+the product is $+1$ at $a=0$, and shifting the window changes its
+sign because $z_{a+k}/z_a=-1$. Multiplying the local formula
+\eqref{eq:pathdiag} by this sign converts the local alternating
+factor into the restriction of $\mathcal E_q$. Thus the windows
+sum to \eqref{eq:Gram}; \eqref{eq:pathendpoint} similarly yields
+\eqref{eq:largeendpoint}.
+
+There is no assumption that $K$ is ordered. Instead regard these
+integer matrices first over $\mathbb R$. The matrix
+$H=\diag(c)+cc^t$ is positive definite, as is each of its
+nonzero embedded quadratic forms. Every index $i$ occurs in at least
+one interval $[a,a+k]$, so for $x\ne0$,
+\[
+ x^tGx=v_k^2\sum_{a=0}^{q-r}
+ (\iota_a^tx)^tH(\iota_a^tx)>0.
+\]
+Therefore $\det G$ is a nonzero integer, and remains nonzero over
+any field of characteristic zero. All diagonal entries in
+\eqref{eq:largeendpoint} are nonzero signed positive integers.
+\end{proof}
+
+\begin{corollary}\label{cor:large}
+For $r\ge2$ and $n\ge2r$, the image of $s_{2r-1}$ on
+$\Mat_n(K)$ is all of $\Mat_n(K)$.
+\end{corollary}
+\begin{proof}
+Let $p=\lceil n/2\rceil$, $q=\lfloor n/2\rfloor$.
+Both are at least $r$; apply Proposition~\ref{prop:positive}
+to each block and Theorem~\ref{thm:transfer}, using
+\eqref{eq:endpoints}.
+\end{proof}
+
+\section{Minimal size: the cycle and its maximal-minor bivector}
+\label{sec:minimal}
+We treat the boundary
+\begin{equation}\label{eq:minimalclaim}
+ \im s_{2n-1}(\Mat_n(K))=\Mat_n(K),\qquad n\ge3.
+\end{equation}
+At this size, a single fixed slice need not serve all targets. The
+construction instead adjusts the diagonal fixed inputs to each
+prescribed Jordan matrix.
+
+Fix the $n$ directed cycle edges
+\[
+ C_i=E_{i,i+1\bmod n},\qquad 0\le i<n,
+\]
+followed by $n-2$ diagonal matrices
+$D_1,\ldots,D_{n-2}$ with diagonal row matrix
+$D\in\Mat_{n-2,n}(K)$. Leave the final variable free and denote
+the resulting slice by $L_D$. Let
+\begin{equation}\label{eq:An}
+ A_n=2\one\one^t-I_n.
+\end{equation}
+For a row-deleted coordinate matrix of rank $n-2$, the signed
+maximal minors of $D$ form a skew matrix $B(D)$, described
+explicitly in the following lemma. Its scale is fixed by the
+order of the cycle inputs followed by the diagonal inputs.
+
+\begin{lemma}[Cycle--bivector formulas]\label{lem:cycle}
+For $0\le i<j<n$, let $D_{\widehat{i}\widehat{j}}$ be the
+square submatrix obtained by removing columns $i,j$, and put
+\begin{equation}\label{eq:gamma}
+\begin{aligned}
+ \gamma_{ij}&=(-1)^{n(n+1)/2+j-i-2},\\
+ B_{ji}&=\gamma_{ij}\det D_{\widehat{i}\widehat{j}},
+ \quad B_{ij}=-B_{ji},\quad B_{ii}=0.
+\end{aligned}
+\end{equation}
+Then
+\begin{equation}\label{eq:cycleDiag}
+ L_D(\diag(x))=\diag(A_nB x).
+\end{equation}
+If $D$ has rank $n-2$, then $B$ has rank two and is decomposable.
+Conversely, for independent $v,w\in K^n$, choosing the rows of
+$D$ to span $\{x:v^tx=w^tx=0\}$ makes
+$B$ a nonzero scalar multiple of $vw^t-wv^t$.
+
+For $p\ne q$, let $I(p,q)$ be the inclusive forward cyclic
+interval $q,q+1,\ldots,p$ and define
+\begin{equation}\label{eq:ab}
+ a_i=\begin{cases}
+ 1,&i=p\text{ or }i=q,\\2,&i\in I(p,q)\setminus\{p,q\},\\0,&i\notin I(p,q),
+ \end{cases}\qquad
+ b_i=\mathbf1_{i\notin I(p,q)}.
+\end{equation}
+The free chord $E_{pq}$ obeys the exact formula
+\begin{equation}\label{eq:cycleChord}
+ L_D(E_{pq})=-2(a^tBb)E_{pq}.
+\end{equation}
+In particular the original forward cycle edges have zero
+coefficient.
+\end{lemma}
+\begin{proof}
+All coefficients are alternating multilinear expressions in the
+$n-2$ diagonal rows of $D$. It is therefore enough to calculate them
+on coordinate diagonal inputs omitting a pair of vertices $i<j$;
+expansion in minors then gives the stated general formulas.
+
+For a free loop at $i$, the cycle and the $n-2$ fixed loops admit
+closed Euler orderings obtained by rotating a cyclic ordering.
+The vertex $j$ without a loop occurs once as a starting point and
+all other vertices twice. Since the total word length is $2n-1$,
+these rotations have the same sign. Place the diagonal loops in
+increasing coordinate order after the cycle edges. Inversion
+counting of the rotation and its loop insertions gives the common
+factor
+\[
+ \gamma_{ij}=(-1)^{n(n+1)/2+j-i-2}.
+\]
+Thus the free loop at $i$ produces
+$\gamma_{ij}\diag(2\one-e_j)$; the loop at $j$ gives the
+negative corresponding expression with $i$ omitted. The two
+columns are exactly $A_nB_{\cdot i}$ and $A_nB_{\cdot j}$.
+This establishes \eqref{eq:cycleDiag} in the coordinate case.
+
+For completeness we record the chord sign calculation in the same
+minor normalization. An Euler trail containing the free chord
+$p\to q$ has two possible edge skeletons before the fixed loops
+are inserted: chord first followed by the forward cycle starting
+at $q$, or the cycle from $p$ followed by the chord. A diagonal
+loop strictly in the inclusive interval $I(p,q)$ has a forced
+placement, while at either chord endpoint there are two placements.
+Pairing the skeletons for a pair of omitted loops on the same side
+of the interval cancels their signs. Moving an omitted loop
+across an endpoint changes the inversion parity; the resulting
+complete coefficient table, for the elementary bivector
+$B_{ij}=-B_{ji}$, is
+\begin{equation}\label{eq:chordsigns}
+\begin{array}{@{}lc@{}}
+\text{positions of omitted }i,j\ (i<j)&\text{coefficient of }B_{ij}\\\hline
+ i,j\in I\text{ or }i,j\notin I&0\\
+ i\text{ endpoint of }I,\ j\notin I&-2\\
+ i\text{ strictly inside }I,\ j\notin I&-4\\
+ i\notin I,\ j\text{ endpoint of }I&2\\
+ i\notin I,\ j\text{ strictly inside }I&4.
+\end{array}
+\end{equation}
+For example, take $n=4$, $p=2$, $q=0$ and omit the loop vertices
+$i=0,j=3$, leaving $D_1=E_{11}$ and $D_2=E_{22}$.
+Writing $X=E_{20}$ and keeping the input order
+$C_0,C_1,C_2,C_3,D_1,D_2,X$, the four admissible Euler words and
+permutation signs are
+\[
+\begin{array}{@{}lr@{}}
+ C_2C_3C_0D_1C_1D_2X & -1\\
+ XC_0D_1C_1D_2C_2C_3 & -1\\
+ D_2C_2C_3C_0D_1C_1X & +1\\
+ D_2XC_0D_1C_1C_2C_3 & -1.
+\end{array}
+\]
+Their sum is $-2$, as in the endpoint/outside row of the table:
+\eqref{eq:gamma} gives $\gamma_{03}=-1$, hence $B_{03}=1$.
+Here is a parameter-uniform inversion check of the table, including
+cyclic wraps. Write $S=\{0,\ldots,n-1\}\setminus\{i,j\}$, and
+let $\ell=(p-q)\bmod n\in\{1,\ldots,n-1\}$. For the first
+skeleton, with any endpoint loop placed at its earliest opportunity,
+list the vertices in the order
+\[
+ \pi_{p,q}=(p,q,q+1,\ldots,p-1,p+1,\ldots,q-1),
+\]
+where each interval runs in the forward cyclic direction. Deleting
+$i,j$ gives the loop ordering $\pi_{p,q}|_S$. Define
+$\eta(p)=\eta(q)=n$ and
+$\eta(v)=n-((v-q)\bmod n)$ otherwise, and write
+$\operatorname{inv}$ for the number of numerical inversions.
+The sign of this baseline Euler word is
+\begin{equation}\label{eq:cycle-uniform-sign}
+ \varepsilon=(-1)^{q(n-q)+\mathbf1_{p\in S}
+       +\operatorname{inv}(\pi_{p,q}|_S)
+       +\sum_{v\in S}\eta(v)}.
+\end{equation}
+The terms count, respectively, the rotation of the labelled cycle,
+the last-labelled chord crossing the optional early $p$-loop,
+inversions among the fixed-loop labels, and the cycle letters
+following their respective loops. In particular, the endpoint
+values of $\eta$ cannot be replaced by its interior formula.
+
+To see that this absolute sign matches the cofactor convention, let
+$z_v$ be the zero-based position of $v$ in $\pi_{p,q}$.
+Moving $p$ from position $\ell$ to the front of the forward
+rotation starting at $q$ yields
+\[
+ \operatorname{inv}(\pi_{p,q})\equiv q(n-q)+\ell,
+ \qquad \sum_{v=0}^{n-1}\eta(v)=\frac{n(n+1)}2+\ell
+ \pmod2.
+\]
+Deleting $v$ changes inversion parity by $z_v+v$; deleting both
+$i<j$ requires the additional parity correction
+$\mathbf1_{z_j<z_i}$. Substitution in
+\eqref{eq:cycle-uniform-sign} gives
+\[
+ \frac{\varepsilon}{\gamma_{ij}}=
+ (-1)^{1+h(i)+h(j)+\mathbf1_{z_j<z_i}},
+ \quad h(v)=z_v+\eta(v)+\mathbf1_{v=p}\pmod2.
+\]
+The vertex order gives $h(v)\equiv n+1$ for $v\in I(p,q)$ and
+$h(v)\equiv n$ outside. When $i,j$ lie on opposite sides,
+$h(i)+h(j)\equiv1$, and all interval vertices precede the
+outside vertices in $\pi_{p,q}$. Hence
+\begin{equation}\label{eq:cycle-uniform-normalization}
+ \varepsilon=\gamma_{ij}\operatorname{sgn}(a_i b_j-a_j b_i)
+ \quad\text{whenever }a_i b_j-a_j b_i\ne0.
+\end{equation}
+
+For clarity, the remaining sign summation is finite independently
+of $n$. If $A$ is the forward arc from $q$ to $p$ and $B$ its
+complement, their edge lengths, including forced interior loops,
+are $\alpha=2\ell-1-u$ and $\beta=2(n-\ell)-1-v$,
+where $u,v$ count the omitted strict-interior loops in the
+respective arcs. Let $P,Q\in\{0,1\}$ indicate the presence of
+endpoint loops at $p,q$. In the first skeleton the parity changes
+on moving a present $p$-loop or $q$-loop to its late placement
+are $1+Q+\alpha$ and $\alpha+\beta$; in the second they are
+$\alpha+\beta+Q$ and $\alpha+1$. The baseline skeletons differ
+by $\beta(1+Q+\alpha)+Q+\alpha$ inversions.
+Summing the at most $2^{P+Q+1}\le8$ possible words therefore
+makes both same-side configurations cancel. In an opposite-side
+configuration the signed sum divided by $\varepsilon$ is $2$
+when the omitted interval vertex is an endpoint, and $4$
+when it is a strict interior vertex. Together with
+\eqref{eq:cycle-uniform-normalization}, the complete sum is
+$2\gamma_{ij}(a_i b_j-a_j b_i)$, namely the table
+\eqref{eq:chordsigns} with $B_{ij}=-\gamma_{ij}$.
+Expansion in the maximal minors proves \eqref{eq:cycleChord}.
+The degree imbalance of the chord forces output $E_{pq}$,
+so no other matrix units occur.
+
+The maximal-minor cofactor construction is the Pluecker bivector
+of the two-dimensional annihilator of the row space of $D$.
+For rank $n-2$, it is nonzero and decomposable, and its image is
+that annihilator. In particular taking the row space to be
+$\ker v^t\cap\ker w^t$ gives the claimed multiple of
+$vw^t-wv^t$. No positivity or nonisotropy assumption on $v,w$
+is involved.
+\end{proof}
+
+\begin{proposition}[Every Jordan target at the minimal size]
+\label{prop:minJordan}
+For each $n\ge3$ and every lower Jordan matrix $J\in\Mat_n(K)$,
+there is a rank-$n-2$ choice of $D$ such that $J$ is contained in
+the image of the single slice $L_D$, after a possible simultaneous
+permutation of coordinates.
+\end{proposition}
+\begin{proof}
+Write $d\in K^n$ for the diagonal of $J$ and $\tau=\sum_i d_i$.
+The matrix $A_n$ is invertible: it acts by $2n-1$ on the line
+$K\one$ and by $-1$ on its sum-zero complement. If $d\ne0$, put
+\begin{equation}\label{eq:vdiag}
+ v=A_n^{-1}d=-d+\frac{2\tau}{2n-1}\one.
+\end{equation}
+Select $w\notin Kv$ and take $B=vw^t-wv^t$, up to the nonzero
+cofactor scalar. The range of $A_nB$ contains $d$. For a Jordan
+link $E_{pq}$, the coefficient in \eqref{eq:cycleChord} is
+proportional to
+\begin{equation}\label{eq:linw}
+ (a^tv)(w^tb)-(a^tw)(v^tb).
+\end{equation}
+If $a,b$ are independent, this is a nonzero linear functional of
+$w$ precisely when $(a^tv,b^tv)\ne(0,0)$. The independence holds
+for the nonforward edges used below: the interval is proper and
+contains its two endpoints.
+
+Here and below every Jordan block is represented with lower
+subdiagonal links, and the coordinates may be permuted. For an
+edge joining equal diagonal entries $\lambda$, formula
+\eqref{eq:vdiag} yields
+\begin{equation}\label{eq:intervalrelation}
+ \frac12a^tv+b^tv=\lambda-\frac{\tau}{2n-1}.
+\end{equation}
+Indeed the left side assigns weight one to the two endpoints,
+and weight one to every other coordinate; the sum is
+$\sum_i v_i-(v_p+v_q)/2$. Substituting
+$\sum_i v_i=\tau/(2n-1)$ and the common endpoint entries
+$v_p=v_q=-\lambda+2\tau/(2n-1)$ gives the identity.
+
+We consider all possible Jordan diagonals.
+\smallskip
+
+\noindent\emph{(i) $\tau\ne0$.}
+List the Jordan blocks consecutively and use their ordinary lower
+links $E_{i+1,i}$. Each relevant inclusive interval has just two
+vertices. If $a^tv=b^tv=0$, the two equal endpoint entries of $v$
+would sum to zero and so both vanish. The sum of the other entries
+would vanish too, contradicting
+$\sum_i v_i=\tau/(2n-1)\ne0$. For $n\ge3$ none of these lower
+links is a forward cycle edge.
+
+\smallskip
+\noindent\emph{(ii) $\tau=0$ and $d\ne0$, with no nontrivial
+zero-eigenvalue Jordan chain.}
+Again use the consecutive Jordan ordering. Every required link
+has nonzero eigenvalue $\lambda$; \eqref{eq:intervalrelation}
+shows $a^tv$ and $b^tv$ cannot both vanish.
+
+\smallskip
+\noindent\emph{(iii) $\tau=0$, $d\ne0$, with at least one
+nontrivial zero-eigenvalue Jordan chain.}
+Two-color the vertices in every zero-eigenvalue Jordan chain as a
+path, black and white, so each required zero link joins different
+colors; assign any zero-eigenvalue singleton to either group.
+Both colors occur. Select the leading endpoint of one nonzero-eigenvalue Jordan
+chain as the single vertex in group $A$, with eigenvalue
+$\mu\ne0$, and put the remaining nonzero-eigenvalue vertices
+in group $B$, retaining their chain ordering. Since the total trace is zero, the sum of the
+eigenvalues in $B$ is $-\mu$, so this group is nonempty. Arrange
+the cyclic coordinates in the order
+\begin{equation}\label{eq:blackwhite}
+ \text{black zero vertices}\;|\; A\;|\;
+ \text{white zero vertices}\;|\; B.
+\end{equation}
+A link with nonzero eigenvalue has nonzero functional by
+\eqref{eq:intervalrelation}; its endpoints are not a forbidden
+forward cycle edge. A zero Jordan link joins black to white,
+and the inclusive cyclic interval from its source to its target
+contains precisely one of $A,B$ among nonzero vertices. Thus
+$\sum_{i\in I}d_i=\mu$ or $-\mu$. Now $v=-d$ and the zero
+endpoints contribute nothing, so
+$ a^tv=-2\sum_{i\in I}d_i=\mp2\mu\ne0$.
+This deals simultaneously with several zero blocks and the
+possible singleton vertices.
+
+\smallskip
+\noindent\emph{(iv) $d=0$.}
+The target is nilpotent, possibly with several Jordan blocks.
+Use the consecutive lower-Jordan ordering but choose $v=\one$
+instead of \eqref{eq:vdiag}. The zero diagonal belongs to the
+range of $A_nB$ automatically. For each required link the
+inclusive interval has two vertices, so
+$ a^tv=2$ and $b^tv=n-2$, and \eqref{eq:linw} is a
+nonzero functional of $w$.
+
+\smallskip
+In each case we have finitely many nonzero linear functionals of
+$w$ whose vanishing must be avoided, together with the proper
+subspace $Kv$. Over the infinite field $K$, their union does not
+exhaust $K^n$. Choose $w$ outside it, and select diagonal fixed
+inputs realizing the decomposable bivector, as in
+Lemma~\ref{lem:cycle}. Their coefficients on all required links
+are nonzero. Solve \eqref{eq:cycleDiag} for an input $\diag(x)$
+giving $d$ (with $x=0$ sufficient in (iv)), then add to \emph{that
+same free input} the required $E_{pq}$ divided by their
+coefficients in \eqref{eq:cycleChord}. The result is precisely the
+permuted Jordan matrix $J$; the slice introduces no unwanted
+matrix entries. Finally, conjugation gives the original target.
+\end{proof}
+
+\begin{corollary}\label{cor:minimal}
+For every $n\ge3$, \eqref{eq:minimalclaim} holds.
+\end{corollary}
+
+\section{Intermediate matrix sizes: periodic path colors}
+\label{sec:middle}
+We now consider $r<n<2r$. Let $k=r-1$ and write
+\begin{equation}\label{eq:kt}
+ n=k+t+1,\qquad 1\le t\le k.
+\end{equation}
+First assume $k\ge3$. On the path with $n$ vertices, give
+edge $e\to e+1$ the color $e\bmod k$. Put
+\begin{equation}\label{eq:periodic}
+\begin{split}
+ F_j&=\sum_{\substack{0\le e<n-1\\e\equiv j\ (\mathrm{mod}\ k)}}
+ E_{e,e+1},\\
+ R_j&=\sum_{\substack{0\le e<n-1\\e\equiv j\ (\mathrm{mod}\ k)}}
+ (-1)^{\lfloor e/k\rfloor}E_{e+1,e},\qquad 0\le j<k.
+\end{split}
+\end{equation}
+Fix the inputs in the order
+\begin{equation}\label{eq:periodorder}
+ F_0,\ldots,F_{k-1},R_{k-1},\ldots,R_0
+\end{equation}
+and denote the final-variable slice by $L$.
+Each term in the expansion chooses one forward and one reverse edge
+of each of the $k$ colors. The colors $0,\ldots,t-1$ occur twice,
+and the others once.
+
+\subsection{Diagonal restriction and the connected-window rule}
+A connected selection with the same forward and reverse edges must
+be a window of $k$ consecutive edges. Every such window contains
+each color once. The signs of the permutations of forward and
+reverse colors cancel; the reversed-edge scalar signs have product
+$(-1)^a$ when the window starts at $a$. By
+Lemma~\ref{lem:pathloop},
+\begin{equation}\label{eq:perdiag}
+ L_{\rm diag}=\left(\sum_{a=0}^{t}
+ \iota_a H\iota_a^t\right)\mathcal E_n.
+\end{equation}
+The Gram argument in Proposition~\ref{prop:positive} shows this
+restriction is invertible: $H$ is positive definite over the reals,
+and every coordinate belongs to one of the $t+1$ windows. Its
+determinant is a nonzero integer.
+
+We will use ordinary offsets as well as cyclic ones. For
+$|h|<n$, put
+\[
+ \mathcal U_h=\Span\{E_{i,i+h}:0\le i,i+h<n\}.
+\]
+Because \eqref{eq:periodorder} contributes $k$ forward and $k$
+backward unit steps, inserting $E_{u,u+h}$ gives output in
+$\mathcal U_h$. Thus $L$ preserves \emph{ordinary} offsets,
+and consequently respects their summands inside a cyclic offset.
+
+A flow comparison across each path cut shows that, if the
+coefficient from $E_{u,u+h}$ to $E_{i,i+h}$ is nonzero, the
+multisets of colors on the oriented intervals beginning at $u$
+and at $i$ of length $|h|$ must coincide. Removing complete cycles
+of $k$ colors, a remaining nonzero proper color interval has a
+unique start residue. Hence
+\begin{equation}\label{eq:colorresidue}
+ h\not\equiv0\pmod k\quad\Longrightarrow\quad i\equiv u\pmod k.
+\end{equation}
+This restriction is particularly strong since $n\le2k+1$:
+for offsets two and three there are at most two positions in a
+residue class.
+
+For a coefficient along the diagonal of an ordinary-offset
+restriction, input and output have the same endpoints, hence
+forward and reverse selected edge sets agree. Encode the choice
+of edge from duplicated color $j<t$ by $\epsilon_j=0$ for its
+first occurrence and $\epsilon_j=1$ for its second. The edge
+indicator along the path is
+\begin{equation}\label{eq:binary}
+ (1-\epsilon_0,\ldots,1-\epsilon_{t-1},
+ \underbrace{1,\ldots,1}_{k-t},
+ \epsilon_0,\ldots,\epsilon_{t-1}).
+\end{equation}
+When $t<k$, this pattern has one plus twice the number of
+$0\to1$ rises of $\epsilon$ as its number of connected
+components; the only permissible connected choices are the
+ordinary windows. A single free chord cannot make one Euler
+trail out of three or more components. When $t=k$, there is in
+addition a two-component selection
+$\epsilon=0^a1^{k-a}$ for each $1\le a<k$:
+it takes one edge interval at the far left and another at the far
+right, separated by a gap of $k$ edges. Such a selection cannot
+be joined by a chord of length two if $k\ge3$, nor by a chord
+of length three if $k\ge4$. We retain it for the long wrapping
+offsets below.
+
+\subsection{The nonwrapping offset-two restriction}
+Consider $L|_{\mathcal U_2}$. By \eqref{eq:colorresidue},
+its matrix splits into singleton blocks and $2\times2$ blocks
+on the positions $i,i+k$ with $0\le i\le t-2$.
+For a diagonal coefficient, the connected-window rule and
+Lemma~\ref{lem:pathchord} show that all contributions have sign
+$(-1)^i$, and their unsigned contributions are positive integers.
+Some window contains both endpoints of $E_{i,i+2}$. For $k\ge3$
+the multiplicity product in that window is at least two, so
+\begin{equation}\label{eq:diagbound}
+ |(L|_{\mathcal U_2})_{ii}|\ge2.
+\end{equation}
+For a pair $i,i+k$, the off-diagonal coefficient has absolute
+value one. For example, to carry the free input
+$E_{i+k,i+k+2}$ into output $E_{i,i+2}$, the cut equations force
+the unmatched forward edges at $i,i+1$ and reverse edges at
+$i+k,i+k+1$. Connectivity forces every edge in between. There
+is then one Euler trail: forward from $i$ to $i+k$, take the
+free chord, and return backward to $i+2$. Reversing this
+construction gives the reverse coefficient, again of magnitude
+one. The two-component exceptional selections cannot intervene
+because their gap exceeds two.
+
+Thus a paired restriction block has diagonal product of absolute
+value at least four and off-diagonal product of absolute value
+one; its determinant is nonzero. Every singleton is nonzero by
+\eqref{eq:diagbound}. Hence
+\begin{equation}\label{eq:U2}
+ L(\mathcal U_2)=\mathcal U_2.
+\end{equation}
+
+\subsection{The wrapping offset-two restriction}
+The remaining two units in $V_2$ have ordinary offset $2-n$.
+It is convenient to compute the opposite offset $n-2$ and use
+an anti-involution. Choose a diagonal $Z$ with
+\begin{equation}\label{eq:Z}
+ \frac{Z_{e+1,e+1}}{Z_{ee}}=(-1)^{\lfloor e/k\rfloor}
+ \qquad(0\le e<n-1),
+\end{equation}
+and define $\theta(X)=ZX^tZ^{-1}$.
+The map $\theta$ reverses products and interchanges the forward
+and reverse colored inputs. Reversing the word of length $2k+1$
+contributes $(-1)^k$, and reversing the $2k$ fixed inputs
+contributes the same sign. Consequently
+\begin{equation}\label{eq:theta}
+ L\theta=\theta L,
+\end{equation}
+so opposite ordinary-offset restrictions are conjugate and have
+the same invertibility status.
+
+There are two positions on $\mathcal U_{n-2}$. Its restriction
+is given by the following complete table (the displayed ordered
+pairs are diagonal entries):
+\begin{equation}\label{eq:wrapping}
+\begin{array}{@{}lll@{}}
+ \text{case}&\text{diagonal entries}&\text{off-diagonal entries}\\\hline
+ 2\le t<k,\ n\text{ even}&(4,-4)&0\\
+ 2\le t<k,\ n\text{ odd}&(-2,-2)&0\\
+ t=1,\ k\text{ even}&(3,-3)&\text{each of magnitude}\le1\\
+ t=1,\ k\text{ odd}&(-2,-2)&\text{each of magnitude}\le1\\
+ t=k&(-(2k-1),-(2k-1))&0.
+\end{array}
+\end{equation}
+We give the signed counts because the last row does not follow
+from the ordinary connected-window rule alone.
+
+For $2\le t<k$, color conservation prevents mixing between the
+two positions. Applying \eqref{eq:pathchordtable} to the
+connected windows gives respectively
+$1+3(-1)^{n-2}$ and $-3+(-1)^{n-1}$.
+For $t=1$, the two window contributions give
+$\mathbf1_{2\mid k}+2(-1)^k$ and
+$-2-\mathbf1_{2\mid k}$. A possible off-diagonal trail has a
+turning point at one of $k$ positions and the signs alternate,
+so its sum is $0$ or $\pm1$. In either case the determinant is
+nonzero.
+
+If $t=k$, the connected windows contribute $-2$ to each
+of the two diagonal coefficients. For the extra selections
+$\epsilon=0^a1^{k-a}$, the left and right bidirected components
+have lengths $a$ and $k-a$ and the reverse-color sign is
+$(-1)^{k-a}$. For the long chord $E_{0,2k-1}$, the local
+starting sign at the left endpoint is positive, and the sign of
+the right component at its penultimate vertex is
+$(-1)^{k-a-1}$. Thus every two-end contribution has negative
+sign after the reverse-color sign is included. Its magnitude
+is two except for $a=k-1$, where it is one. For the other long
+chord $E_{1,2k}$, the left local sign is negative and the right
+endpoint sign is $(-1)^{k-a}$; again all contributions are
+negative, with the unique magnitude-one case $a=1$. More explicitly, for $b=k-a$ the contributions of one
+selection to the respective diagonal positions are
+\begin{equation}\label{eq:uniform-wrap-selections}
+ -(2-\mathbf1_{a=k-1}),\qquad
+ -(2-\mathbf1_{a=1}),\quad 1\le a\le k-1.
+\end{equation}
+The reverse-color sign $(-1)^b$ is included in both expressions.
+Summing the $k-1$ choices gives $-(2k-3)$ in each position.
+Including the connected-window contributions $-2$ gives
+$-(2k-1)$; off-diagonal entries vanish by
+\eqref{eq:colorresidue}, since the two long-chord positions
+have different residues modulo $k\ge3$. This proves the
+last row of \eqref{eq:wrapping} uniformly in $k$, including
+its signs.
+
+Every restriction in \eqref{eq:wrapping} is invertible. By
+\eqref{eq:theta}, so is the restriction on $\mathcal U_{2-n}$.
+Combining it with \eqref{eq:U2} yields
+\begin{equation}\label{eq:V2full}
+ L(V_2)=V_2.
+\end{equation}
+For odd $n$, \eqref{eq:perdiag} and \eqref{eq:V2full}
+now imply surjectivity by Lemma~\ref{lem:jordanpath}.
+
+\subsection{The additional edge for even sizes}
+Assume $k\ge4$. For the ordinary-offset-three restriction,
+\eqref{eq:colorresidue} isolates the residue-zero block. Its
+index set is $\{0\}$ if $t\le2$, and $\{0,k\}$ if $t\ge3$.
+The corresponding matrix is
+\begin{equation}\label{eq:grade3}
+ \begin{cases}
+ [-2],&t=1,\\{}[-4],&t=2,\\
+ \begin{pmatrix}-5&\varepsilon\\\eta&5(-1)^k\end{pmatrix},
+  &3\le t\le k,
+ \end{cases}
+ \qquad |\varepsilon|=|\eta|=1.
+\end{equation}
+For the row at $0$, the windows starting at $1,2,3$ contribute
+$-2,-2,-1$ when present; the window at zero contributes zero,
+since its endpoints have opposite parity. For the row at $k$,
+the first three windows contribute $1,2,2$, with common sign
+$(-1)^k$. The paired off-diagonal coefficients are the
+unique Euler-trail values $\pm1$, as for ordinary offset two;
+the two-end selections have too long a gap. This proves
+\eqref{eq:grade3}. Every block is invertible: in the last
+case its diagonal product has absolute value $25$, while its
+off-diagonal product has absolute value $1$. Hence the slice
+contains $E_{03}$, by choosing the appropriate free input
+inside the isolated residue-zero block. For even $n$, the
+Hamiltonian path \eqref{eq:evenpath} completes the argument.
+
+\begin{proposition}\label{prop:middle}
+For $r\ge5$ and $r<n<2r$, the image of $s_{2r-1}$ is
+$\Mat_n(K)$. The same argument gives this conclusion for
+$(r,n)=(4,5)$ and $(4,7)$.
+\end{proposition}
+\begin{proof}
+For $k\ge4$ the diagonal and cyclic offset-two subspaces are
+in the same fixed slice by \eqref{eq:perdiag} and
+\eqref{eq:V2full}; for even $n$ it also contains $E_{03}$
+by \eqref{eq:grade3}. Apply Lemma~\ref{lem:jordanpath}.
+If $k=3$, the relevant intermediate odd sizes are $n=5,7$;
+step two is Hamiltonian and the same diagonal and offset-two
+arguments apply. The even intermediate size $n=6$ is treated
+separately below.
+\end{proof}
+
+\section{Exceptional small matrix orders}\label{sec:seams}
+The preceding uniform proofs leave $s_5$ on $\Mat_4,\Mat_5$
+and $s_7$ on $\Mat_6$. We now give concrete slices or a block
+construction for each. In the two fixed-slice cases, the complete
+restriction matrices below are exact integer certificates; the
+recurrences for regenerating every entry are given in
+Appendix~\ref{app:verification}.
+
+\subsection{\texorpdfstring{$s_5$ on $\Mat_5$}{s5 on M5}}
+Use \eqref{eq:periodic} with $k=t=2$ and the fixed-input order
+\eqref{eq:periodorder}. This case is not covered by the previous
+proof, which assumed $k\ge3$. The restrictions to the diagonal
+and cyclic step-two spaces, in the natural unit bases, are
+\begin{equation}\label{eq:s5mat}
+L_0=\begin{pmatrix}
+2&-2&1&0&0\\
+2&-8&4&-1&0\\
+1&-4&10&-4&1\\
+0&-1&4&-8&2\\
+0&0&1&-2&2
+\end{pmatrix},\qquad
+L_2=\begin{pmatrix}
+4&-1&1&0&0\\
+-1&-4&-1&0&0\\
+1&-1&4&0&0\\
+0&0&0&-3&0\\
+0&0&0&0&-3
+\end{pmatrix}.
+\end{equation}
+Direct exact evaluation gives
+\begin{equation}\label{eq:s5dets}
+ \det L_0=900,\qquad\det L_2=-594.
+\end{equation}
+Both restrictions are invertible. Since step two is Hamiltonian
+on five vertices, Lemma~\ref{lem:jordanpath} proves
+\begin{equation}\label{eq:s5m5}
+ \im s_5(\Mat_5(K))=\Mat_5(K).
+\end{equation}
+
+\subsection{\texorpdfstring{$s_7$ on $\Mat_6$}{s7 on M6}}
+Take the Vandermonde core \eqref{eq:Vandermonde} with
+$r=4$ and $q=6$. Its diagonal restriction has determinant
+\begin{equation}\label{eq:s7d0}
+ \det L_0=-31\,911\,936.
+\end{equation}
+The cyclic offset-two restriction is
+\begin{equation}\label{eq:s7mat2}
+ L_2=\begin{pmatrix}
+ -16&-24&24&-4&0&0\\
+ 24&-132&144&-24&0&0\\
+ -24&144&60&24&0&0\\
+ 4&-24&24&16&0&0\\
+ 0&0&0&0&-416&-36\\
+ 0&0&0&0&-36&-376
+ \end{pmatrix}.
+\end{equation}
+The exact determinant of this restriction is
+\[\det L_2=1\,838\,804\,889\,600.\]
+For the parity-linking step the cyclic offset-three restriction is
+\begin{equation}\label{eq:s7mat3}
+ L_3=\begin{pmatrix}
+164&44&0&0&0&0\\
+44&432&100&0&0&0\\
+0&100&52&0&0&0\\
+0&0&0&164&-44&0\\
+0&0&0&-44&432&-100\\
+0&0&0&0&-100&52
+\end{pmatrix},
+\quad\det L_3=3\,776\,896\,843\,776.
+\end{equation}
+All three restrictions belong to the \emph{same} final-variable
+slice, and all are invertible. Thus it contains every diagonal,
+all of $V_2$, and in particular $E_{03}\in V_3$. The even-size
+Hamiltonian path \eqref{eq:evenpath} gives
+\begin{equation}\label{eq:s7m6}
+ \im s_7(\Mat_6(K))=\Mat_6(K).
+\end{equation}
+
+\subsection{\texorpdfstring{$s_5$ on $\Mat_4$}{s5 on M4}: an explicit three-dimensional core}
+We use an elementary $3\times3$ construction. Put
+\begin{equation}\label{eq:s5core}
+ A=E_{01},\quad B=E_{12},\quad C=E_{20},\quad
+ D=\diag(-1,0,1)
+\end{equation}
+inside $\Mat_3(K)$. Direct expansion of the alternator yields
+\begin{equation}\label{eq:s4endpoint}
+ s_4(A,B,C,D)=\diag(-1,2,-1),
+\end{equation}
+and the slice image is the five-dimensional subspace
+\begin{equation}\label{eq:W}
+ W=\left\{
+ \begin{pmatrix}\alpha&0&z\\u&\beta&0\\0&v&\alpha\end{pmatrix}
+ :\alpha,\beta,u,v,z\in K\right\}.
+\end{equation}
+Indeed the specified matrix is obtained from the single free input
+\begin{equation}\label{eq:Wpre}
+ X=\diag\left(\frac{3\beta-4\alpha}{5},
+ \frac{2\beta-\alpha}{5},0\right)
+ +\frac u2E_{10}+\frac v2E_{21}-\frac z4E_{02}.
+\end{equation}
+Equations \eqref{eq:s4endpoint} and \eqref{eq:Wpre} follow by
+direct evaluation.
+
+\begin{lemma}\label{lem:Wclasses}
+Every similarity class in $\Mat_3(K)$ meets $W$.
+\end{lemma}
+\begin{proof}
+For a cyclic target with characteristic polynomial
+$x^3-tx^2+qx-\delta$, choose $\alpha\in K$ solving
+\[
+ 2t\alpha-3\alpha^2=q,
+ \qquad \beta=t-2\alpha,
+ \qquad u=v=1,\qquad z=\delta-\alpha^2\beta.
+\]
+The matrix in \eqref{eq:W} has the required characteristic
+polynomial. Moreover
+$\det[e_0,Me_0,M^2e_0]=1$, so it is cyclic and the
+characteristic polynomial identifies its cyclic similarity class.
+For noncyclic nonscalar classes the elementary representatives
+$\diag(c,d,c)$ and $cI+E_{10}$, as appropriate to the Jordan
+partition, lie in $W$. Scalars plainly do also.
+\end{proof}
+
+Embed \eqref{eq:s5core} into the upper-left $3\times3$ block of
+$\Mat_4(K)$, with zero lower-right singleton. Because the
+even-standard endpoint \eqref{eq:s4endpoint} is invertible, the
+two off-diagonal rectangular maps are arbitrary, and the
+upper-left block ranges over $W$. The lower-right output is
+always zero. Thus this one slice has image
+\begin{equation}\label{eq:3plus1}
+ \left\{\begin{pmatrix}Y&b\\c&0\end{pmatrix}:
+ Y\in W,\ b\in K^{3\times1},\ c\in K^{1\times3}\right\}.
+\end{equation}
+
+Let $T\in\Mat_4(K)$ be nonscalar. There exists $v$ such that
+$v,Tv$ are independent; otherwise every vector is an eigenvector
+and $T$ would be scalar. Choose $\phi\in(K^4)^*$ with
+$\phi(v)=1$, $\phi(Tv)=0$. In a basis adapted to
+$K^4=\ker\phi\oplus Kv$, the bottom-right coefficient of $T$
+is zero. By Lemma~\ref{lem:Wclasses}, a similarity change on
+$\ker\phi$ makes its $3\times3$ compression a member of $W$.
+The other two blocks are unrestricted in \eqref{eq:3plus1}.
+Hence every nonscalar $T$ is a single $s_5$ value, up to
+conjugation.
+
+To obtain scalars we need a short general observation.
+\begin{lemma}[Traceful multilinear values]\label{lem:scalar}
+Let $f$ be multilinear on $\Mat_n(K)$, with $K$ algebraically
+closed of characteristic zero. If $f$ has an evaluation with
+nonzero trace, then some evaluation of $f$ is a nonzero scalar
+matrix. Consequently every scalar matrix is in its actual image.
+\end{lemma}
+\begin{proof}
+Fix a primitive $n$th root of unity and the usual clock-and-shift
+matrices $U,V$ with $UV=\zeta VU$. The $n^2$ matrices
+$U^aV^b$, $a,b\bmod n$, form a basis of $\Mat_n(K)$ and are
+homogeneous for the $\mathbb Z_n^2$ grading. Every product of
+a fixed tuple of homogeneous basis elements lies in the same
+graded component. By multilinearity, expanding a traceful
+evaluation in this basis gives a homogeneous basis tuple on which
+$f$ has nonzero trace. Every nonzero graded component has trace
+zero, whereas the degree-zero component is $KI$. Thus this
+particular value is a nonzero scalar. Rescaling one input gives
+any scalar.
+\end{proof}
+
+The core \eqref{eq:s5core} is traceful: for example,
+\eqref{eq:W} contains $\diag(1,0,1)$, which is a single
+$s_5$ value on $\Mat_3(K)$. Embedding the same evaluation in
+$\Mat_4(K)$ preserves its nonzero trace. Lemma~\ref{lem:scalar}
+therefore gives all scalar targets, completing
+\begin{equation}\label{eq:s5m4}
+ \im s_5(\Mat_4(K))=\Mat_4(K).
+\end{equation}
+
+\section{Proof of the odd-standard assertion}\label{sec:assembly}
+\begin{proof}[Proof of the odd assertion of Theorem~\ref{thm:main}]
+If $n<r$, then $2r-1\ge2n+1$. By Amitsur--Levitzki,
+$s_{2n}$ is an identity on $\Mat_n(K)$; the standard recursion
+expresses every higher alternator through lower ones, proving
+$s_{2r-1}=0$.
+
+For $r=1$, the claim is $s_1(X)=X$. For $r=2$ and $n=1$,
+the alternating cubic vanishes. For $n\ge2$, the published
+cubic image-linearity result \cite[Theorem~3.5]{Vitas2026}
+implies that $\im s_3$ is a vector subspace. The substitution
+$s_3(I,A,B)=[A,B]$ gives every traceless matrix by the classical
+commutator theorem \cite{AlbertMuckenhoupt1957}, and a traceful
+$2\times2$ evaluation,
+embedded into $\Mat_n(K)$, gives a value outside that subspace.
+For example, $s_3(E_{00},E_{01},E_{10})=\diag(2,1)$
+on $\Mat_2(K)$. Since the traceless subspace has codimension one, cubic
+image-linearity now gives the whole $\Mat_n(K)$.
+
+Suppose $r\ge3$. The case $n=r$ follows from
+Corollary~\ref{cor:minimal}. The range $n\ge2r$ follows from
+Corollary~\ref{cor:large}. For $r<n<2r$, when $r\ge5$ apply
+Proposition~\ref{prop:middle}; when $r=4$, it covers $n=5,7$
+and \eqref{eq:s7m6} covers $n=6$. When $r=3$, the sizes
+$n=4,5$ are \eqref{eq:s5m4} and \eqref{eq:s5m5}.
+The cases are partitioned as follows:
+\begin{center}
+\small
+\begin{tabular}{@{}ll@{}}
+\toprule
+Degree parameter & Surjective sizes and argument \\
+\midrule
+$r=1$ & all $n\ge1$; identity map\\
+$r=2$ & all $n\ge2$; cubic theorem and direct values\\
+$r=3$ & $n=3$ cycle, $n=4,5$ cases, $n\ge6$ transfer\\
+$r=4$ & $n=4$ cycle; $n=5,7$ periodic; $n=6$ case; $n\ge8$ transfer\\
+$r\ge5$ & $n=r$ cycle; $r<n<2r$ periodic; $n\ge2r$ transfer\\
+\bottomrule
+\end{tabular}
+\end{center}
+Together with the identity branch $n<r$, this exhausts every
+pair of positive integers $(r,n)$.
+\end{proof}
+
+\begin{remark}
+The large and periodic ranges use a fixed linear slice, whereas the
+minimal-size construction chooses a slice for the prescribed Jordan target.
+\end{remark}
+

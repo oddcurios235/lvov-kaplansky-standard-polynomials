@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+message: "Citation details for the accompanying mathematical preprint."
+title: "The L’vov–Kaplansky Conjecture for Standard Polynomials"
+authors:
+  - family-names: "Miah"
+    given-names: "Y. T."
+preferred-citation:
+  type: article
+  title: "The L’vov–Kaplansky Conjecture for Standard Polynomials"
+  authors:
+    - family-names: "Miah"
+      given-names: "Y. T."
+  year: 2026
+  doi: "10.5281/zenodo.24031055"

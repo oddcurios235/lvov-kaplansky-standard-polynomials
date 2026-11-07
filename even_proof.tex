@@ -1,0 +1,653 @@
+\section{Actual images from an attained rank-one nilpotent}\label{sec:even-prelim}
+The remainder of the article deals with $s_{2r}$. Throughout this part,
+its trace-zero property follows directly from cyclic alternation:
+for any word of length $2r$, moving the first letter to the last
+preserves the trace but changes the permutation sign by
+$(-1)^{2r-1}=-1$. Consequently
+\begin{equation}\label{eq:even-trace}
+ \tr s_{2r}(A_1,\ldots,A_{2r})=0,
+ \qquad \im s_{2r}(\Mat_n)\subseteq\Sl_n.
+\end{equation}
+The identity $s_{2n}=0$ on $\Mat_n$ implies the entire zero branch
+for $n\le r$. Moreover $s_{2r}(A_1,\ldots,A_{2r-1},I_n)=0$.
+For nonzero images the following local-to-global mechanism is essential.
+It is the smooth-map formulation of the nilpotent argument in
+\cite[Lemma~2]{Tang2026FiveSix}; the elementary degeneration is
+included to make the actual-value conclusion explicit.
+
+\begin{lemma}[Attained-nilpotent actual-image criterion]
+\label{lem:nilpotent-open}
+Let $F:\mathbb A^m_K\to\Sl_n(K)$ be a polynomial map whose image
+contains zero and is invariant under similarities and multiplication
+by nonzero scalars. Suppose that for some $x$ the value $R=F(x)$
+is nonzero, rank one and square zero, and
+\(dF_x:K^m\to\Sl_n(K)\) is surjective. Then
+$\im F=\Sl_n(K)$.
+\end{lemma}
+\begin{proof}
+Both affine spaces are smooth. Surjectivity of the differential
+makes $F$ smooth at $x$, and smoothness is open; the restriction to
+a suitable neighborhood maps onto a Zariski-open subset containing
+$R$. In particular, the image contains an open neighborhood $U$ of
+$R$ in $\Sl_n$.
+
+Let $T\in\Sl_n$ be nonzero. It is nonscalar in characteristic zero.
+A nonscalar linear transformation has a vector $v$ for which
+$v,Tv$ are linearly independent: otherwise every line is invariant,
+forcing the transformation to be scalar. Thus after a similarity
+$T_{01}\ne0$. For $t\ne0$, write
+\begin{equation}\label{eq:nilpotent-degeneration}
+ D(t)=\diag(t^{-1},t,1,\ldots,1),\qquad
+ T(t)=t^2D(t)TD(t)^{-1}.
+\end{equation}
+All entries of $T(t)$ have nonnegative powers of $t$; its value at
+$t=0$ is $T_{01}E_{01}$. Every nonzero rank-one square-zero matrix
+is similar, up to a nonzero scalar, to $R$. By similarity and
+scaling invariance there is therefore an open neighborhood of
+$T_{01}E_{01}$ contained in the image. Its preimage under the
+affine-line morphism $t\mapsto T(t)$ contains zero and hence some
+nonzero $t$. Thus $T(t)$ is an actual value. Undoing the
+similarity and scalar $t^2$ shows that $T$ is an actual value.
+The zero target is already in the image.
+\end{proof}
+
+A standard polynomial is equivariant for simultaneous conjugation;
+scaling one input scales its output, and setting an input to zero
+gives zero. Thus every standard evaluation map satisfies the
+invariance assumptions of Lemma~\ref{lem:nilpotent-open}.
+
+\section{A uniform minimal-size seed}\label{sec:even-seed}
+The first matrix order at which $s_{2r}$ need not vanish is
+$n=r+1$. The following construction treats every such order with
+one matrix-unit formula, including the full differential required
+by Lemma~\ref{lem:nilpotent-open}.
+
+\begin{theorem}[Uniform even-standard seed]\label{thm:even-seed}
+For every $n\ge2$,
+\begin{equation}\label{eq:even-seed}
+ \im s_{2n-2}(\Mat_n(K))=\Sl_n(K).
+\end{equation}
+More precisely, the evaluation constructed below has a nonzero
+rank-one square-zero output and surjective full differential.
+\end{theorem}
+\begin{proof}
+Write $p=n-2$ and index matrix units by $0,\ldots,n-1$.
+For $n\ge3$, use the ordered $2p+2$ inputs
+\begin{equation}\label{eq:even-tuple}
+\begin{aligned}
+ \mathcal A=(&L=E_{00},\ X=E_{01},\\[-2pt]
+ &S_2=E_{02},T_2=E_{20},\ldots,\\[-2pt]
+ &S_{n-1}=E_{0,n-1},T_{n-1}=E_{n-1,0}).
+\end{aligned}
+\end{equation}
+The signed matrix-unit trail calculation gives
+\begin{equation}\label{eq:even-seed-evals}
+\begin{aligned}
+ s_{2n-2}(\mathcal A)&=(p+1)!E_{01},\\
+ \partial_{X\gets E_{10}}s_{2n-2}(\mathcal A)&=-(p+1)!E_{10},\\
+ \partial_{X\gets E_{12}}s_{2n-2}(\mathcal A)&=-p!E_{12},\\
+ \partial_{S_2\gets E_{10}}s_{2n-2}(\mathcal A)&=-(p+1)!E_{20},\\
+ \partial_{S_2\gets E_{12}}s_{2n-2}(\mathcal A)&=p!(E_{11}-E_{22}).
+\end{aligned}
+\end{equation}
+The notation $\partial_{A_j\gets V}$ denotes the directional
+derivative in the $j$th argument; by multilinearity it is exactly
+the value with that argument replaced by $V$.
+
+Here is a signed-trail derivation valid for all $n$. A nonzero
+matrix-unit word is precisely an oriented Euler trail on the
+labelled directed graph. In the unmodified tuple, each trail starts
+at $0$, traverses the loop $L$ and the $p$ excursions
+$S_jT_j$ in any order, and ends with $X$. The excursions have
+even length and commute in permutation parity; moving $X$ to the
+end crosses $2p$ labels. These $(p+1)!$ trails all have positive
+sign. With $X=E_{10}$ the trail instead begins with $X$, making
+its sign negative. With $X=E_{12}$ it starts with $X,T_2$,
+traverses the remaining root blocks and ends with $S_2$;
+there are $p!$ such trails and the word has odd inversion parity.
+With $S_2=E_{10}$ the trail begins with $T_2$ and traverses the
+root loop, the new excursion $XS_2$, and the remaining
+$p-1$ excursions; the resulting $(p+1)!$ trails are negative.
+
+Finally, for $S_2=E_{12}$, there is a directed triangle
+$X,S_2,T_2$ together with a loop and the other two-edge
+excursions. Trails starting at $0$ or another leaf cancel by
+exchanging the odd-length loop and triangle. Starting at $1$
+leaves $p!$ positively signed trails, whereas starting at $2$
+leaves $p!$ negatively signed trails. This proves the last
+formula in \eqref{eq:even-seed-evals}, including its diagonal
+signs.
+
+Let $\mathcal D$ be the image of the \emph{full} differential of
+$s_{2n-2}$ at $\mathcal A$. It lies in $\Sl_n$ by
+\eqref{eq:even-trace}. Equivariance supplies every commutator
+$[Z,E_{01}]\in\mathcal D$ (the scalar $(p+1)!$ is nonzero).
+Consider a change of basis $g=\diag(1,1,G)$,
+$G\in\mathrm{GL}_{p}(K)$, acting on the leaf coordinates.
+It fixes $L$ and $X$ and sends the $p$ outgoing and $p$ incoming
+leaf arguments to mutually contragredient linear combinations
+of their original arguments. The combined transformation on
+these $2p$ frozen slots has determinant one. The alternating
+multilinear map, and hence its differential image at the tuple,
+is therefore invariant under conjugation by $g$.
+
+The orbits of $E_{12}$ and $E_{20}$ in
+\eqref{eq:even-seed-evals} supply all $E_{1j}$ and $E_{i0}$
+for $i,j\ge2$. The orbit of $E_{11}-E_{22}$ spans
+\begin{equation}\label{eq:even-seed-block}
+ \bigl\{(\tr B)E_{11}-B:
+ B\text{ is supported on the leaf block}\bigr\},
+\end{equation}
+because the conjugates of a rank-one diagonal idempotent span
+its full matrix block: rank-one idempotents include $E_{ii}$
+and $E_{ii}+E_{ji}$ for distinct leaf indices.
+Together with $E_{10}$ and $[Z,E_{01}]$, these directions give
+every off-diagonal matrix unit and every diagonal difference.
+Thus $\mathcal D=\Sl_n$, as required.
+
+When $n=2$, take $(E_{00},E_{01})$.
+Its commutator value is $E_{01}$; replacing $E_{01}$ by $E_{10}$
+gives $-E_{10}$ and the conjugation direction gives
+$E_{00}-E_{11}$. The full differential is $\Sl_2$.
+In each order the output is a nonzero rank-one square-zero
+matrix, so Lemma~\ref{lem:nilpotent-open} proves
+\eqref{eq:even-seed}.
+\end{proof}
+
+\begin{remark}[The size-four seed in Tang's construction]\label{rem:tang-seed}
+At $n=4$, the tuple in \eqref{eq:even-tuple} is
+$(E_{00},E_{01},E_{02},E_{20},E_{03},E_{30})$.
+Qiyue Tang's Appendix~A uses
+$(4E_{11},E_{12},E_{13},E_{14},E_{31},E_{41})$ in one-based
+coordinates \cite[Proposition~11]{Tang2026FiveSix}.
+The two coincide after relabelling the indices, interchanging
+the fourth and fifth slots, and multiplying the first slot by
+$4$; alternating multilinearity accounts for the sign and
+scale. Thus the size-four instance agrees, up to these changes,
+with Tang's matrix-unit construction.
+\end{remark}
+
+\section{Admissible cores and an additive transfer}\label{sec:even-cores}
+The seed can be transferred to larger orders by a normal-map
+criterion that keeps track of the \emph{full differential}, rather
+than merely of a frozen generic kernel. Fix $r\ge1$ and write
+\begin{equation}\label{eq:even-rk}
+ k=2r-1.
+\end{equation}
+For $B=(B_1,\ldots,B_k)\in\Mat_N(K)^k$ and
+$u\in K^N$, define
+\begin{equation}\label{eq:core-definitions}
+\begin{aligned}
+ S&=s_k(B_1,\ldots,B_k),\\
+ L(P)&=s_{k+1}(B_1,\ldots,B_k,P),\\
+ C_i(P)&=s_k(B_1,\ldots,B_{i-1},P,B_{i+1},\ldots,B_k),\\
+ \Gam_{B,u}(P)&=\bigl(L(P),C_1(P)u,\ldots,C_k(P)u\bigr).
+\end{aligned}
+\end{equation}
+Thus $\Gam_{B,u}:\Mat_N(K)\to\Mat_N(K)\oplus(K^N)^k$
+is a linear map in $P$; the frozen data $(B,u)$ vary
+polynomially. Call the size $N$ \emph{admissible for $r$} if
+there exists one such tuple with
+\begin{equation}\label{eq:core-admissible}
+ \det S\ne0,\qquad \ker\Gam_{B,u}=\{0\}.
+\end{equation}
+Both conditions are polynomial nonvanishing conditions in
+unrestricted parameters. A witness therefore defines a nonempty
+Zariski-open subset of the core parameter space.
+
+\begin{lemma}[Normal-map criterion]\label{lem:core-normal}
+If $N$ is admissible for $r$, then
+\begin{equation}\label{eq:core-conclusion}
+ \im s_{2r}(\Mat_{N+1}(K))=\Sl_{N+1}(K).
+\end{equation}
+Indeed the defining witness yields an attained nonzero rank-one
+square-zero value at which the full differential is surjective.
+At the particular border tuple used below, assuming $S$ invertible,
+this differential condition is equivalent to injectivity of
+$\Gam_{B,u}$.
+\end{lemma}
+\begin{proof}
+Embed the fixed matrices and the final input as
+\begin{equation}\label{eq:core-border}
+ A_i=\begin{pmatrix}B_i&0\\0&0\end{pmatrix},\qquad
+ Y=\begin{pmatrix}0&u\\0&0\end{pmatrix}.
+\end{equation}
+Only words ending in $Y$ can survive, because $YA_i=0$.
+Since $k$ is odd, the value of the even alternator is
+\begin{equation}\label{eq:core-border-value}
+ s_{k+1}(A_1,\ldots,A_k,Y)
+ =\begin{pmatrix}0&Su\\0&0\end{pmatrix}.
+\end{equation}
+If $u=0$, then $\Gam=L$ and its kernel contains all
+$B_i$ (and also the identity), contradicting injectivity.
+Hence $Su\ne0$. The value is nonzero, square zero and rank one.
+
+To compute the differential, pair its values with a general
+matrix using the nondegenerate trace form. Variations of $Y$
+in the upper and lower borders give the full upper and lower
+border directions by left and right multiplication by $S$ and
+$-S$, respectively. Thus every normal is block diagonal.
+The differential values have trace zero, so scalar matrices
+are normals by \eqref{eq:even-trace}. Subtracting a scalar we
+may write a normal uniquely as $\diag(P,0)$.
+
+Variations of the old $N\times N$ block of $Y$ give
+$\tr(P L(Q))$ for arbitrary $Q$. The map $L$ is
+skew-adjoint for the trace pairing. To see this, collect the
+cyclic classes in
+$\tr s_{k+2}(B_1,\ldots,B_k,Q,P)$. The length
+$k+2$ is odd, so a cyclic shift preserves sign; moving $Q$
+past the $k$ frozen letters contributes a minus sign.
+Consequently the trace equals $-(k+2)\tr(Q L(P))$.
+Interchanging $P,Q$ in the alternating trace yields
+\begin{equation}\label{eq:core-skew}
+ \tr(P L(Q))=-\tr(Q L(P)).
+\end{equation}
+The old-block normal equations are therefore $L(P)=0$.
+
+Now vary the $i$th $A_i$ in the lower border by a row
+$c\in(K^N)^*$. For a nonzero word the unique upper-border
+factor $Y$ must be immediately followed by this lower-border
+variation. Remove $Y$ and rotate the remaining $k$ letters
+cyclically. If $a$ of the original old letters followed the
+adjacent pair, the removal has sign $(-1)^{a+1}$ and moving
+the varied letter to its original position has sign $(-1)^a$.
+The product is $-1$, and the normal pairing is exactly
+\begin{equation}\label{eq:core-low-normal}
+ -c\,C_i(P)u.
+\end{equation}
+Because all rows $c$ are available, these normal equations say
+$C_i(P)u=0$ for each $i$. Therefore every normal modulo
+scalars satisfies $\Gam_{B,u}(P)=0$. Conversely, in the pure
+border tuple \eqref{eq:core-border}, these are all the normal
+equations: other source-block variations yield only upper-border
+outputs or zero. This also proves the asserted equivalence.
+If $\Gam$ is injective, all normals are scalar, so the
+full differential has image $\Sl_{N+1}$.
+Lemma~\ref{lem:nilpotent-open} now proves
+\eqref{eq:core-conclusion} as an \emph{attained} image equality.
+\end{proof}
+
+A complementary rectangular nonvanishing calculation records the
+invertibility available for independently varying block-diagonal inputs.
+\begin{lemma}[Mixed-rectangle nonvanishing]\label{lem:mixed-rect}
+Let $a,b\ge1$ and $m<2(a+b)$. For an $m$-variable standard
+polynomial, the free rectangular map
+$\Mat_{a\times b}\to\Mat_{a\times b}$ obtained by freezing
+$m-1$ block-diagonal inputs of sizes $a$ and $b$ is generically
+invertible as the frozen blocks vary independently.
+\end{lemma}
+\begin{proof}
+Choose integers $e,f\ge0$ with $e+f=m-1$,
+$e<2a$ and $f<2b$; they exist since $m<2(a+b)$.
+Specialize the first $e$ frozen labels to the $a$ block and
+the remaining $f$ to the $b$ block. The only surviving words
+put the left labels before the free rectangle and the right
+labels after it, so the map is
+\begin{equation}\label{eq:mixed-rect}
+ X\longmapsto(-1)^f s_e(A)X s_f(B),\qquad s_0=I.
+\end{equation}
+Both factors admit invertible evaluations. Indeed, for degree
+below the Amitsur--Levitzki threshold a standard polynomial
+is a nonidentity. Expand a nonzero evaluation in the
+clock-and-shift homogeneous basis of the corresponding matrix
+algebra; by multilinearity one homogeneous tuple yields a
+nonzero scalar multiple of an invertible basis element.
+Thus the rectangular map is invertible at one specialization,
+and its determinant is a nonzero polynomial.
+\end{proof}
+
+\begin{theorem}[Additivity of admissible core sizes]\label{thm:core-add}
+For a fixed $r\ge1$, if $a,b\ge r$ are admissible core sizes,
+then $a+b$ is admissible for $r$.
+\end{theorem}
+\begin{proof}
+Choose witnesses $(B^{(a)},u_a)$ and $(B^{(b)},u_b)$
+for the two sizes. For one parameter $t$ set
+\begin{equation}\label{eq:core-add-tuple}
+ B_i(t)=\diag(B_i^{(a)},tB_i^{(b)}),\qquad
+ u=\binom{u_a}{u_b}.
+\end{equation}
+For every $t\ne0$, the diagonal endpoint blocks are
+$S_a$ and $t^kS_b$ and hence are invertible. The old-block
+$L$ and $C_i$ operators in the second block are respectively
+scaled by $t^k$ and $t^{k-1}$, so their individual
+admissibility kernels remain zero.
+
+On the two off-diagonal rectangular spaces, the map $L_t$
+in \eqref{eq:core-definitions} is polynomial in $t$. At $t=0$
+the top-right rectangular map is $X\mapsto S_aX$,
+because only words with the free variable last survive.
+The bottom-left rectangular map is $X\mapsto -XS_a$,
+because only words with the free variable first survive and
+$k$ is odd. Both are invertible. Therefore their determinants
+are nonzero polynomials in the \emph{same} scalar parameter.
+As $K$ is infinite, select one common $t\in K^\times$
+avoiding their zero sets.
+
+At this fixed $t$, if $\Gam_{B(t),u}(P)=0$, the two mixed
+$L_t$ equations force the off-diagonal blocks of $P$ to be
+zero. The remaining $C_i(P)$ are block diagonal, and the
+normal-map equations reduce to those for the two original
+cores, with nonzero scalar factors on the second block.
+Both diagonal blocks of $P$ vanish by the original
+injectivity hypotheses. Thus $\Gam_{B(t),u}$ is injective,
+and $\det s_k(B(t))\ne0$. This constructs a single
+admissible witness of size $a+b$.
+\end{proof}
+
+\begin{corollary}[An infinite congruence family]\label{cor:congruence}
+For every $r,q\ge1$,
+\begin{equation}\label{eq:congruence}
+ \im s_{2r}(\Mat_{qr+1}(K))=\Sl_{qr+1}(K).
+\end{equation}
+\end{corollary}
+\begin{proof}
+In Theorem~\ref{thm:even-seed}, set $n=r+1$, place the
+exit variable last, and remove its sink coordinate. The old
+$r\times r$ core has
+\begin{equation}\label{eq:core-star}
+ B=(E_{00},E_{01},E_{10},\ldots,E_{0,r-1},E_{r-1,0}),
+ \qquad u=e_0,
+\end{equation}
+with the obvious singleton interpretation when $r=1$.
+Counting closed trails through the root loop and the $r-1$
+two-edge excursions gives
+\begin{equation}\label{eq:core-star-endpoint}
+ S=s_{2r-1}(B)
+ =\diag(r!,(r-1)!,\ldots,(r-1)!),
+\end{equation}
+which is invertible in characteristic zero.
+The full differential in Theorem~\ref{thm:even-seed} is onto
+$\Sl_{r+1}$; the converse statement in
+Lemma~\ref{lem:core-normal} shows that this old core is
+admissible. For $r=1$ it follows also directly from
+$S=1$ and $C_1(P)u=P$. Add $q$ copies of the admissible
+size $r$ with Theorem~\ref{thm:core-add}, then apply
+Lemma~\ref{lem:core-normal} in size $qr+1$.
+\end{proof}
+
+\section{Exact core certificates in degrees eight and ten}\label{sec:even-low}
+For each $r$, the uniform construction supplies an admissible core
+of size $r$. By additive transfer, to obtain all sizes $N\ge r$,
+it suffices to establish admissibility for the finite range
+\begin{equation}\label{eq:core-finite-reduction}
+ r,r+1,\ldots,2r-1.
+\end{equation}
+Indeed every $N\ge r$ has the form $N=qr+s$,
+$q\ge1$ and $0\le s<r$. If $s=0$, use $q$ copies of
+$r$; otherwise use $q-1$ copies of $r$ and one copy of $r+s$.
+Thus a finite collection of admissible cores extends to every
+larger core order by Theorem~\ref{thm:core-add}.
+
+For $r=4$ and $r=5$, the seven residual cases have exact
+integer witnesses. For each case in the table, the corresponding
+certificate contains an explicit ordered tuple $B$ of integer matrices,
+an integer column $u$,
+$\det S\ne0$, and the row indices and exact nonzero integer
+determinant of an $N^2\times N^2$ submatrix of
+$\Gam_{B,u}$. The last two columns give reductions of these full integer
+minors modulo $101$ and $103$; their nonzero residues verify
+nonvanishing in characteristic zero.
+\begin{center}
+\small
+\begin{tabular}{@{}rrrcrr@{}}
+\toprule
+$r$ & $N$ & $2r$ & $\rk\Gam$ & minor $\bmod 101$ & minor $\bmod 103$\\
+\midrule
+4&5&8&25&48&57\\
+4&6&8&36&36&25\\
+4&7&8&49&75&58\\
+5&6&10&36&52&34\\
+5&7&10&49&64&45\\
+5&8&10&64&45&60\\
+5&9&10&81&85&7\\
+\bottomrule
+\end{tabular}
+\end{center}
+The certificate names are listed in
+Appendix~\ref{app:even-verification}; they encode each pair $(r,N)$
+from the table. For example,
+\path{certificates/border_r4_N5.json} records $(r,N)=(4,5)$. The normal map has $N^2$
+columns, so a nonzero $N^2$-minor proves its injectivity.
+The invertible endpoint is separately recorded for each case.
+
+\begin{theorem}[Degrees eight and ten without generic-nullity input]
+\label{thm:even-eight-ten}
+For every algebraically closed characteristic-zero field $K$,
+\begin{equation}\label{eq:eight-ten}
+\begin{aligned}
+ \im s_8(\Mat_n(K))&=
+ \begin{cases}\{0\},&n\le4,\\\Sl_n(K),&n\ge5,\end{cases}\\
+ \im s_{10}(\Mat_n(K))&=
+ \begin{cases}\{0\},&n\le5,\\\Sl_n(K),&n\ge6.\end{cases}
+\end{aligned}
+\end{equation}
+\end{theorem}
+\begin{proof}
+\enlargethispage{2\baselineskip}
+For $r=4$, the uniform seed gives admissible size $N=4$,
+and the three finite residual sizes in
+\eqref{eq:core-finite-reduction} are $N=5,6,7$.
+For $r=5$, the uniform seed gives $N=5$, and the finite
+residual sizes are $N=6,7,8,9$. Thus the seven exact
+certificate witnesses together with Theorem~\ref{thm:core-add}
+make every core size $N\ge r$ admissible, for $r=4,5$.
+Lemma~\ref{lem:core-normal} yields the actual traceless image
+for every order $n=N+1\ge r+1$. The other orders vanish by
+Amitsur--Levitzki.
+\end{proof}
+
+Appendix~\ref{app:even-verification} describes how to check the
+seven saved certificates. The extension to all matrix orders
+uses Theorem~\ref{thm:core-add}.
+
+\section{Generic nullity and the all-even classification}\label{sec:even-general}
+We now deduce the remaining even degrees from two precise
+external generic-kernel theorems. The argument extends the
+approach to $s_6$ in Qiyue Tang's Appendix~A
+\cite[Proposition~11]{Tang2026FiveSix}; in particular,
+its use of a rank-one nilpotent, a generic central division
+algebra and a projective eigenline incidence is directly indebted
+to that source.
+
+Write
+\begin{equation}\label{eq:generic-op}
+ \mathcal L_{A_1,\ldots,A_j}(P)
+ =s_{j+1}(A_1,\ldots,A_j,P).
+\end{equation}
+The two inputs needed below are as follows. Brassil and
+Reichstein \cite[Theorem~1.2]{BrassilReichstein2022} prove that
+for $j$ even, $2\le j\le2N-2$, and generic $j$-tuples in
+$\Mat_N$, the kernel of \eqref{eq:generic-op} has dimension
+$j$ in characteristic zero. Their theorem is stated more
+generally over an infinite field with specified characteristic
+exclusions; only the characteristic-zero specialization is
+used here. Lin, Chenhao Tang and Zhao
+\cite[Theorem~1.2 and Remark~6.1]{LinTangZhao2026}
+prove the complementary odd-frozen statement: for $N\ge3$,
+odd $j$ with $3\le j\le2N-3$ and any characteristic-zero
+field, the generic nullity is
+\begin{equation}\label{eq:GN}
+ \dim\ker\mathcal L_{A_1,\ldots,A_j}
+ =\begin{cases}j+1,&N\text{ even},\\
+ j+2,&N\text{ odd}.\end{cases}
+\end{equation}
+These generic-kernel dimensions provide the input for the
+following attained-image argument.
+
+\begin{theorem}[Even-standard classification from generic nullity]
+\label{thm:even-complete}
+For every algebraically closed field $K$ of characteristic zero
+and all $r,n\ge1$,
+\begin{equation}\label{eq:even-complete}
+ \im s_{2r}(\Mat_n(K))=
+ \begin{cases}\{0\},&n\le r,\\\Sl_n(K),&n\ge r+1.\end{cases}
+\end{equation}
+For $r\ge2$ and $n\ge r+2$, the proof uses the above external
+Brassil--Reichstein and Lin--Tang--Zhao generic-nullity theorems.
+\end{theorem}
+\begin{proof}
+If $n\le r$, then $2r\ge2n$, and the standard identity
+forces the image to be zero. The case $r=1$ is the classical
+commutator image theorem \cite{AlbertMuckenhoupt1957}.
+For $r\ge2$ and $n=r+1$, the positive claim is
+Theorem~\ref{thm:even-seed}.
+
+Now let $r\ge2$ and $n\ge r+2$. Set
+\begin{equation}\label{eq:generic-parameters}
+ N=n-1,\qquad k=2r-1;
+ \quad N\ge r+1\ge3,\quad 3\le k\le2N-3.
+\end{equation}
+For each $C_i$ of \eqref{eq:core-definitions}, the number
+$k-1=2r-2$ of frozen inputs is even and satisfies
+$2\le k-1\le2N-2$. Therefore both external nullity theorems
+apply in precisely their stated ranges.
+
+Take $k$ independent generic $N\times N$ matrices
+$B_1,\ldots,B_k$ over $K$, and let $D$ denote the central
+division algebra of generic matrices generated by them, with
+center $F$ and degree $N$. Write $E$ for the field of their
+independent matrix-entry indeterminates. The natural generic
+matrix representation embeds $D$ in $\Mat_N(E)$ and splits it
+over $E$; the center $F$ embeds in $E$ as scalar matrices.
+The matrices $B_i$ are linearly independent over $F$,
+because their vectorized columns are independent already over
+$E$ (some $k\times k$ minor is a nonzero polynomial, as
+$k\le N^2$). Set
+\begin{equation}\label{eq:generic-S}
+ S=s_k(B_1,\ldots,B_k)\in D.
+\end{equation}
+Since $k<2N$, the standard polynomial is not an identity
+of $\Mat_N$; genericity makes $S\ne0$ and thus
+$S\in D^\times$. In the generic matrix model, all of the
+maps $L,C_i$ from \eqref{eq:core-definitions} are
+$F$-linear operators on the $N^2$-dimensional space $D$.
+Their ranks persist under splitting-field extension.
+
+The Brassil--Reichstein theorem gives, simultaneously for
+every $i$,
+\begin{equation}\label{eq:generic-C-kernel}
+ \ker C_i=\Span_F\{B_j:j\ne i\}.
+\end{equation}
+Indeed alternation gives the displayed $(k-1)$-dimensional
+subspace, and the generic theorem gives exactly this nullity.
+The generic open conditions for the finitely many $C_i$
+intersect in the irreducible generic input space, so one set
+of generic entries realizes all the ranks at once.
+The odd-frozen theorem \eqref{eq:GN} gives
+\begin{equation}\label{eq:generic-W}
+ W=\ker L/\Span_F(B_1,\ldots,B_k),\qquad
+ \dim_F W=\begin{cases}1,&N\text{ even},\\2,&N\text{ odd}.
+ \end{cases}
+\end{equation}
+(The upper bound $\dim W\le2$ would suffice below.)
+
+Alternation also gives
+\begin{equation}\label{eq:C-on-B}
+ C_i(B_j)=\delta_{ij}S.
+\end{equation}
+The $F$-linear maps
+\begin{equation}\label{eq:generic-T}
+ T_i:W\longrightarrow D/F1,
+ \qquad[P]\longmapsto S^{-1}C_i(P)+F1
+\end{equation}
+are consequently well defined. They are \emph{jointly
+injective}. In fact, if $C_i(P)=b_iS$ for every $i$, then
+\eqref{eq:C-on-B} gives
+$P-\sum_i b_iB_i\in\bigcap_i\ker C_i=\{0\}$;
+the last equality follows from \eqref{eq:generic-C-kernel}
+and the linear independence of all the $B_i$.
+This joint injectivity persists after scalar extension.
+
+Choose an $F$-linear section $W\to\ker L$ and let
+$\bar F$ be an algebraic closure of $F$. Fix a splitting
+identification $D\otimes_F\bar F\simeq\Mat_N(\bar F)$.
+For a class $[P]\in W_{\bar F}$ the endomorphisms
+$S^{-1}C_i(P)$ are defined by this section; changing the
+section adds scalars to them, so their eigenlines are
+independent of the section. We claim that there is a nonzero
+column $u\in\bar F^N$ which is not a common eigenvector of
+$S^{-1}C_i(P)$ for \emph{any} nonzero class $[P]$.
+
+If $\dim W=0$ the claim is immediate. If $\dim W=1$, joint
+injectivity means at least one of these matrices is nonscalar;
+its eigenvectors form a finite union of proper eigenspaces,
+which does not exhaust $\bar F^N$. The substantive case is
+$\dim W=2$. In that case form the projective closed incidence
+\begin{equation}\label{eq:generic-incidence}
+ \mathcal I=\bigl\{([P],[u])\in
+ \mathbb P(W_{\bar F})\times\mathbb P^{N-1}_{\bar F}:
+ u\wedge S^{-1}C_i(P)u=0\quad(1\le i\le k)\bigr\}.
+\end{equation}
+The incidence records \emph{simultaneously} all kernel classes
+and their common eigenlines.
+
+At the generic point of the projective line
+$\mathbb P(W_{\bar F})$, write $P=P_0+tP_1$ using an
+$F$-basis of $W$. Joint injectivity of \eqref{eq:generic-T}
+shows that some $S^{-1}C_i(P)$ is noncentral in
+$D\otimes_FF(t)$. This algebra is a division algebra:
+it embeds in the Laurent-series division ring $D((t))$,
+with central indeterminate $t$, and as a finite-dimensional
+domain over $F(t)$ every nonzero element is invertible.
+A noncentral element in that division algebra has an
+irreducible separable minimal polynomial of degree $a\ge2$
+over $F(t)$; its degree divides $N$. Upon splitting, its
+reduced characteristic polynomial is the $N/a$-th power of
+that minimal polynomial. Its distinct eigenvalues all have
+eigenspace dimension $N/a\le\lfloor N/2\rfloor$.
+Consequently the generic fiber of \eqref{eq:generic-incidence}
+has dimension at most $\lfloor N/2\rfloor-1$.
+
+At every special geometric point $[P]$, the scalar-extended
+joint injectivity still ensures that some
+$S^{-1}C_i(P)$ is nonscalar. Its eigenspaces have dimension
+at most $N-1$, and hence the corresponding fiber has
+dimension at most $N-2$. Thus any component of
+$\mathcal I$ dominating the projective line has dimension
+at most $\lfloor N/2\rfloor$, and a component over a
+point has dimension at most $N-2$. Since $N\ge3$,
+\begin{equation}\label{eq:incidence-bound}
+ \dim\mathcal I\le N-2<N-1=\dim\mathbb P^{N-1}.
+\end{equation}
+The projection to $\mathbb P^{N-1}$ is proper, so its image
+is a proper closed subset. Choose $[u]$ outside that image.
+This proves the claim for the \emph{same} $u$ and every
+nonzero kernel class.
+
+For this column, the normal map $\Gam_{B,u}$ is injective
+after the chosen splitting. Indeed $\Gam(P)=0$ first implies
+$P\in\ker L$. If its class in $W$ were nonzero, all
+$C_i(P)u=0$ would make $[u]$ a common eigenline, contrary
+to construction. Therefore
+$P=\sum_i b_iB_i$; then
+$C_i(P)u=b_iSu=0$ for all $i$ forces each $b_i=0$.
+We have also retained $\det S\ne0$.
+
+It remains to obtain a witness over the originally specified
+field $K$, rather than merely over an abstract splitting of
+$D$. Choose an algebraic closure $\Omega$ of the
+original generic-entry field $E$ containing an $F$-embedding
+of $\bar F$. The generic matrix representation and the
+chosen split representation of
+$D\otimes_F\Omega\simeq\Mat_N(\Omega)$ differ by an inner
+automorphism, by Skolem--Noether. Transport the column $u$
+under that conjugacy. Equivariance of $S,L,C_i$ shows that
+$\det S\ne0$ and $\rk\Gam=N^2$ hold in the original
+generic-entry representation over $\Omega$.
+
+\enlargethispage{1\baselineskip}
+Both assertions mean that the product of $\det S$ with a
+suitable $N^2\times N^2$ minor of $\Gam$ is a \emph{nonzero
+polynomial} in the generic entries of $B$ and the coordinates
+of $u$, with coefficients in $K$. Because $K$ is infinite,
+there is one specialization of all these coordinates to $K$
+at which this polynomial is nonzero. This gives an admissible
+core of size $N=n-1$ over $K$ itself, in the sense of
+\eqref{eq:core-admissible}. By Lemma~\ref{lem:core-normal},
+the full polynomial map $s_{2r}$ attains a nonzero rank-one
+nilpotent and therefore has actual image $\Sl_n(K)$.
+This proves \eqref{eq:even-complete} in the remaining range.
+\end{proof}
+

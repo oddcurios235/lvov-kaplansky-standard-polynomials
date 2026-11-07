@@ -1,0 +1,150 @@
+\documentclass[11pt]{amsart}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,array,longtable}
+\usepackage{microtype}
+\usepackage{needspace}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={The L'vov-Kaplansky Conjecture for Standard Polynomials},pdfauthor={Y. T. Miah},pdfsubject={Set-of-values classification for alternating standard polynomials}}
+\usepackage{enumitem}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\Mat}{\mathrm{M}}
+\newcommand{\im}{\operatorname{Im}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\Span}{\operatorname{span}}
+\newcommand{\rk}{\operatorname{rank}}
+\newcommand{\one}{\mathbf{1}}
+\newcommand{\ord}{\operatorname{ord}}
+\newcommand{\Sl}{\mathfrak{sl}}
+\newcommand{\Gam}{\Gamma}
+\title[L'vov--Kaplansky for Standard Polynomials]{The L'vov--Kaplansky Conjecture for Standard Polynomials}
+\author{Y. T. Miah}
+\date{7 November 2026}
+\subjclass[2020]{16R10, 15A24, 16R30}
+\keywords{L'vov--Kaplansky conjecture, standard polynomial, matrix polynomial image, alternating polynomial, Euler trail, generic division algebra}
+\emergencystretch=2em
+\begin{document}
+\begin{abstract}
+The L'vov--Kaplansky conjecture asks whether the image of a multilinear
+polynomial on a full matrix algebra is a vector subspace. For the
+unnormalized standard polynomial $s_d$ over an algebraically closed field
+$K$ of characteristic zero, the sets of individual matrix values are
+determined in every degree and order. The image of $s_{2r-1}$ is zero
+when $n<r$ and all of $\Mat_n(K)$ when $n\ge r$; the image of $s_{2r}$
+is zero when $n\le r$ and $\Sl_n(K)$ when $n\ge r+1$.
+The odd-degree proof uses explicit linear slices and Jordan forms.
+The even-degree argument combines a uniform nilpotent construction and
+an additive transfer for admissible cores with generic-nullity results
+of Brassil--Reichstein and Lin--Tang--Zhao, extending a method of
+Qiyue Tang to obtain actual polynomial values.
+\end{abstract}
+\maketitle
+
+\section{Introduction and the classification}\label{sec:introduction}
+The L'vov--Kaplansky conjecture concerns the images of multilinear
+noncommutative polynomials evaluated on full matrix algebras. In the
+setting of algebraically closed fields of characteristic zero, it asks
+whether each such image is a vector subspace
+\cite{KanelBelovMalevRowen2016,KanelBelovEtAl2020}.
+The alternating standard polynomials constitute a distinguished family
+for which one can go further and identify the image explicitly, in all
+degrees and matrix orders.
+
+For every integer $d\ge1$ define the \emph{unnormalized standard polynomial}
+\begin{equation}\label{eq:standard}
+ s_d(X_1,\ldots,X_d)=\sum_{\sigma\in S_d}\operatorname{sgn}(\sigma)
+ X_{\sigma(1)}\cdots X_{\sigma(d)}.
+\end{equation}
+The image $\im s_d(\Mat_n(K))$ means the set of matrices attained as
+$s_d(A_1,\ldots,A_d)$ for \emph{one tuple} of inputs; it is not the
+linear span or Zariski closure of those values. Write
+$\Sl_n(K)=\{T\in\Mat_n(K):\tr T=0\}$. Matrix units are indexed from
+zero except when quoting another author's conventions. Throughout the
+article, $K$ is algebraically closed of characteristic zero unless a
+statement explicitly declares otherwise.
+
+\Needspace{13\baselineskip}
+\begin{theorem}[Images of the standard polynomials]\label{thm:main}
+For every algebraically closed field $K$ of characteristic zero and all
+integers $r,n\ge1$, the \emph{actual images} are
+\begin{equation}\label{eq:main}
+\begin{aligned}
+ \im s_{2r-1}(\Mat_n(K))
+ &=\begin{cases}\{0\},&n<r,\\ \Mat_n(K),&n\ge r,\end{cases}\\[3pt]
+ \im s_{2r}(\Mat_n(K))
+ &=\begin{cases}\{0\},&n\le r,\\ \Sl_n(K),&n\ge r+1.\end{cases}
+\end{aligned}
+\end{equation}
+\end{theorem}
+
+The zero branches follow from the Amitsur--Levitzki identity and
+its standard recursion \cite{AmitsurLevitzki1950}. In even degree,
+cyclically rotating a word reverses its permutation sign while
+preserving its trace, so every value is traceless. The main task is
+therefore to attain each matrix in the two positive branches of
+\eqref{eq:main}.
+
+The lowest-degree cases are well established. The ordinary commutator
+$s_2$ attains every traceless matrix \cite{AlbertMuckenhoupt1957},
+and Vitas's cubic image-linearity theorem gives the corresponding
+$s_3$ result \cite{Vitas2026}. The quartic result of Fagundes,
+de Mello and da Silva dos Santos includes the actual-image assertion
+for $s_4$ \cite[Theorem~8, Case~1]{FagundesMelloSantos2022}.
+Qiyue Tang established the degree-five and degree-six conclusions,
+including the actual traceless image of $s_6$ in orders at least four
+\cite[Appendix~A, Proposition~11]{Tang2026FiveSix}.
+
+Classical antecedents include Kostant's work on standard identities,
+Swan's graph method and its correction, and results of Rowen and
+Hutchinson on standard polynomials and matrix identities
+\cite{Kostant1958,Swan1963,Swan1969Correction,Rowen1974,Hutchinson1974}.
+Serre studied special matrix values and related norm questions
+\cite{Serre2016}. These works provide context for the exact
+all-degree image classification undertaken here.
+
+The two parity arguments have different structures. Part~I establishes
+the odd-degree assertion through signed path and cycle evaluations,
+fixed linear slices and target-dependent Jordan constructions at the
+minimal size. Part~II uses a rank-one nilpotent with surjective full
+differential to obtain actual values. Its nilpotent and
+projective-incidence method builds on Tang's Appendix~A, while the
+uniform seed, additive-core transfer and exact degree-eight and
+degree-ten cases supply further constructions. The general even-degree
+step uses the generic-nullity theorem of Brassil--Reichstein
+\cite[Theorem~1.2]{BrassilReichstein2022} and Chen Lin, Chenhao Tang
+and Enhan Zhao \cite[Theorem~1.2]{LinTangZhao2026}. The final
+appendices give the exact finite checks supporting specified steps.
+
+\part*{I. Odd standard polynomials}
+\input{odd_proof}
+\part*{II. Even standard polynomials}
+\input{even_proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+The odd assertion is proved in Section~\ref{sec:assembly}. The even
+assertion follows from Theorem~\ref{thm:even-complete}, including the
+identity and low-order cases. Both arguments establish equality of
+sets of individual values: by explicit slices in odd degree and by
+the attained-nilpotent criterion in even degree.
+\end{proof}
+
+\section*{Use of AI}
+OpenAI's GPT-6 Pro assisted substantially in the mathematical
+investigation, development of proofs, exact computation, source
+assessment and manuscript preparation. The author is responsible for
+the mathematical claims, attribution and final presentation.
+
+\appendix
+\input{verification}
+\bibliographystyle{amsplain}
+\urlstyle{same}
+{\raggedright\interlinepenalty=10000
+\bibliography{references}
+}
+\end{document}

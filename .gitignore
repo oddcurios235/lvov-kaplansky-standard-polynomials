@@ -1,0 +1,23 @@
+# Local editor and operating-system files
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# LaTeX build intermediates
+*.aux
+*.log
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.blg
+*.bbl
+
+# Python working files
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
